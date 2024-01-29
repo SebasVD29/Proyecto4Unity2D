@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 2276792077
+    locked: 0
+  - name: Ambiente
+    uniqueID: 3915613057
+    locked: 0
+  - name: Player
+    uniqueID: 279171157
+    locked: 0
+  - name: AmbientePorEncima
+    uniqueID: 3954936443
+    locked: 0
