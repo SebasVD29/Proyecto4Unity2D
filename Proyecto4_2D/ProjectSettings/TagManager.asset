@@ -50,6 +50,12 @@ TagManager:
   - name: Player
     uniqueID: 279171157
     locked: 0
+  - name: Enemigo
+    uniqueID: 691754747
+    locked: 0
   - name: AmbientePorEncima
     uniqueID: 3954936443
+    locked: 0
+  - name: Objetos
+    uniqueID: 855856897
     locked: 0
