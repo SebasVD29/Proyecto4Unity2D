@@ -47,6 +47,9 @@ TagManager:
   - name: Ambiente
     uniqueID: 3915613057
     locked: 0
+  - name: Attack
+    uniqueID: 1956027091
+    locked: 0
   - name: Player
     uniqueID: 279171157
     locked: 0
