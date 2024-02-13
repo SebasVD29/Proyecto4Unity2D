@@ -16,11 +16,15 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        moveSpeed = 5f;
+        moveSpeed = 8f;
     }
 
     // Update is called once per frame
     void Update()
+    {
+        MoveBulletHell();
+    }
+    void MoveBulletHell()
     {
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
     }
@@ -31,11 +35,20 @@ public class Bullet : MonoBehaviour
     }
     private void Destroy()
     {
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 
     private void OnDisable()
     {
         CancelInvoke();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.CompareTag("Player"))
+        {
+            Destroy(gameObject, 0f);
+        }
+        
     }
 }

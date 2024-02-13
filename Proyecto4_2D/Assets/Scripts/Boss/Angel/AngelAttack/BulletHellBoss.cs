@@ -5,10 +5,13 @@ using UnityEngine;
 public class BulletHellBoss : MonoBehaviour
 {
     [SerializeField]
-    private int bulletsAmount = 10;
+    private int bulletsAmount = 5;
 
     [SerializeField]
     private float startAngle = 90f, endAngle = 270f;
+
+    [SerializeField]
+    private float startTime = 0f, endTime = 2f;
 
     private Vector2 bulletMoveDirection; 
 
@@ -17,7 +20,7 @@ public class BulletHellBoss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("Fire", 0f, 2f);
+        InvokeRepeating("Fire", startTime, endTime);
     }
 
     private void Fire()
