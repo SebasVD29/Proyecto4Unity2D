@@ -14,8 +14,8 @@ public class Fire : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Toco player");
-            Destroy(this.gameObject);
+            Debug.Log("DañoPlayer");
+            //Destroy(this.gameObject);
         }
     }
 }

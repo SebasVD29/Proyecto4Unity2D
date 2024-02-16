@@ -24,6 +24,10 @@ public enum AngelAttacks
 public class AngelManage : MonoBehaviour
 {
     public float timeStateToChange;
+    public float timeToBulletFire;
+    public float divisiones;
+    public float radioCirculo;
+    public float timePositionTP, countdownTP;
     public AngelState state;
     public AngelAttacks attackState;
     private Vector3 positionStart = new Vector3(2.7f,0.3f,0f);
@@ -33,8 +37,7 @@ public class AngelManage : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed;
     public float moveSpeedFire;
-    int nextPosition;
-    private Vector2 moveDirection;
+
 
     [Header("Posiciones")]
     public Transform[] positions;
@@ -57,11 +60,11 @@ public class AngelManage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        state = AngelState.Idel;
-        nextPosition = 0;
+        transform.position = positions[0].position;
+        state = AngelState.Idel; 
         bossRB = GetComponent<Rigidbody2D>();
         animatorAngel = GetComponent<Animator>();
-        
+        countdownTP = timePositionTP;
         StartCoroutine(AngelStateChange());
         
     }
@@ -69,28 +72,20 @@ public class AngelManage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        countdownTP -= Time.deltaTime;
+        DirecctionSelect();
+    }
+    void DirecctionSelect()
+    {  
+        if (countdownTP <= 0)
+        {
+            countdownTP = timePositionTP;
+            int randomPosition = Random.Range(0, 6);
+            transform.position = positions[randomPosition].position;
+        }
 
-        //DirecctionSelect();
     }
-    IEnumerator DirecctionSelect()
-    {
-        yield return new WaitForSeconds(0f);
-        if (transform.position == positions[nextPosition].position)
-        {
-            increaseNextPosition();
-        }
-        //transform.position = Vector3.MoveTowards(transform.position, positions[nextPosition].transform.position, moveSpeed );
-        moveDirection = (positions[nextPosition].transform.position - transform.position).normalized * moveSpeed;
-        bossRB.velocity = new Vector2(moveDirection.x, moveDirection.y);
-    }
-    void increaseNextPosition()
-    {
-        nextPosition++;
-        if (nextPosition >= positions.Length)
-        {
-            nextPosition = 0;
-        }
-    }
+
 
     IEnumerator AngelStateChange()
     {
@@ -120,8 +115,8 @@ public class AngelManage : MonoBehaviour
 
     IEnumerator AngelAttackStateChange()
     {
-        //int randomAttack = Random.Range(1, 7);
-        int randomAttack = 4;
+        int randomAttack = Random.Range(1, 7);
+       // int randomAttack = 6;
         yield return new WaitForSeconds(timeStateToChange);
         switch (randomAttack)
         {
@@ -155,12 +150,13 @@ public class AngelManage : MonoBehaviour
             case AngelState.Idel:
                 animatorAngel.SetBool("Idel", true);
                 StartCoroutine(AngelStateChange());
-                StartCoroutine(DirecctionSelect());
+                
 
                 break;
             case AngelState.Attack:
                 animatorAngel.SetBool("Idel", false);
                 animatorAngel.SetTrigger("Attack");
+                
                 StartCoroutine(AngelAttackStateChange());
                 StartCoroutine(AngelStateChange());
                 break;
@@ -199,15 +195,13 @@ public class AngelManage : MonoBehaviour
 
     IEnumerator Bullet()
     {
-        yield return new WaitForSeconds(0f);
         GameObject Fire = Instantiate(fireBulletPrefab, spawnAttack.position, Quaternion.identity);
-        Fire.GetComponent<Bullet>().enabled = false;
+        //Fire.GetComponent<Bullet>().enabled = false;
         Vector2 moveDirection = (player.transform.position - spawnAttack.position).normalized * moveSpeedFire;
         Fire.GetComponent<Rigidbody2D>().velocity = new Vector2(moveDirection.x, moveDirection.y);
+        yield return new WaitForSeconds(1f);
   
     }
-
-
     IEnumerator Pilar()
     {
         GameObject Pilar = Instantiate(PilarExplosivePrefab, spawnAttack.position, Quaternion.identity);
@@ -216,48 +210,107 @@ public class AngelManage : MonoBehaviour
         Pilar.GetComponent<Animator>().SetTrigger("Explosive");
         //Vector2 moveDirection = (player.transform.position - spawnBullet.position).normalized * moveSpeedFire;
         //Fire.GetComponent<Rigidbody2D>().velocity = new Vector2(moveDirection.x, moveDirection.y);
+        yield return new WaitForSeconds(1.5f);
+
 
     }
     IEnumerator ColumnaRithgToLeftAttack()
     {
-     
-        PilarExplosivePrefab.GetComponent<Explosive>().timeLife = 6f;
-        GameObject Pilar = Instantiate(PilarExplosivePrefab, spawnAttack.position, Quaternion.identity);
+        if (transform.position.y > 1)
+        { 
+            PilarExplosivePrefab.GetComponent<Explosive>().timeLife = 6f;
+            GameObject Pilar = Instantiate(PilarExplosivePrefab, spawnAttack.position, Quaternion.identity);
         
-        for (int i = 0; i < positionsColumnas.Length; i++)
-        {
-            Pilar.transform.position = positionsColumnas[i].position;
-            Pilar.GetComponent<Animator>().SetTrigger("Explosive");
-            yield return new WaitForSeconds(1f);
+            for (int i = 0; i < positionsColumnas.Length; i++)
+            {
+                Pilar.transform.position = positionsColumnas[i].position;
+                Pilar.GetComponent<Animator>().SetTrigger("Explosive");
+                yield return new WaitForSeconds(1f);
+            }
+            PilarExplosivePrefab.GetComponent<Explosive>().timeLife = 1.5f;
         }
-        PilarExplosivePrefab.GetComponent<Explosive>().timeLife = 1.5f;
+        else
+        {
+            StartCoroutine(BulletHellAttack());
+        }
+        yield return new WaitForSeconds(7f);
     }
     IEnumerator ColumnaLeftToRightAttack()
     {
-        PilarExplosivePrefab.GetComponent<Explosive>().timeLife = 6f;
-        GameObject Pilar = Instantiate(PilarExplosivePrefab, spawnAttack.position, Quaternion.identity);
+        if (transform.position.y > 1)
+        { 
+            PilarExplosivePrefab.GetComponent<Explosive>().timeLife = 6.5f;
+            GameObject Pilar = Instantiate(PilarExplosivePrefab, spawnAttack.position, Quaternion.identity);
 
-        for (int i = 5; i < positionsColumnas.Length; i--)
-        {
-            Pilar.transform.position = positionsColumnas[i].position;
-            Pilar.GetComponent<Animator>().SetTrigger("Explosive");
-            yield return new WaitForSeconds(1f);
+            for (int i = 5; i < positionsColumnas.Length && i>=0; i--)
+            {
+                Pilar.transform.position = positionsColumnas[i].position;
+                Pilar.GetComponent<Animator>().SetTrigger("Explosive");
+                yield return new WaitForSeconds(1f);
+            }
+            PilarExplosivePrefab.GetComponent<Explosive>().timeLife = 1.5f;
         }
-        PilarExplosivePrefab.GetComponent<Explosive>().timeLife = 1.5f;
-      
-
+        else
+        {
+            StartCoroutine(BulletHellAttack());
+        }
+        yield return new WaitForSeconds(7f);
     }
 
-    IEnumerator BulletHellAttack()
-    {
-      
-        yield return new WaitForSeconds(0f);
-    }
     IEnumerator PilarLateralAttck()
     {
-        yield return new WaitForSeconds(0.5f);
+        
+        if (transform.position.y > 1)
+        {
+            GameObject central = Instantiate(PilarExplosivePrefab, spawnAttack.position, Quaternion.identity);
+            central.transform.position = positionsPilar[0].position;
+            central.GetComponent<Animator>().SetTrigger("Explosive");
+            yield return new WaitForSeconds(1f);
+            Destroy(central);
+            GameObject LateralRight = Instantiate(PilarExplosivePrefab, spawnAttack.position, Quaternion.identity);
+            GameObject LateralLeft = Instantiate(PilarExplosivePrefab, spawnAttack.position, Quaternion.identity);
+            LateralRight.transform.position = positionsPilar[1].position;
+            LateralLeft.transform.position = positionsPilar[2].position;
+            LateralRight.GetComponent<Animator>().SetTrigger("Explosive");
+            LateralLeft.GetComponent<Animator>().SetTrigger("Explosive");
+            yield return new WaitForSeconds(1f);
+            Destroy(LateralRight);
+            Destroy(LateralLeft);
+
+        }
+        else
+        {
+            StartCoroutine(BulletHellAttack());
+        }
+        yield return new WaitForSeconds(3f);
+
+    }
+    IEnumerator BulletHellAttack()
+    {
+        for (float angulo = 0; angulo < 360; angulo += 360 / divisiones)
+        {
+            float velocidad = 1;
+            CrearBala(angulo, velocidad);
+        }
+        yield return new WaitForSeconds(timeToBulletFire);
+       
+
     }
 
+    void CrearBala(float angulo, float velocidad)
+    {
+        // Calcula las coordenadas x e y basándote en el ángulo y el radio
+        float x = transform.position.x + Mathf.Cos(angulo * Mathf.Deg2Rad) * radioCirculo;
+        float y = transform.position.y + Mathf.Sin(angulo * Mathf.Deg2Rad) * radioCirculo;
+
+        Vector3 moveDirection = new Vector3(x, y, 0f);
+        GameObject bala = Instantiate(fireBulletPrefab, moveDirection, Quaternion.identity);
+
+        Vector2 bulDir = (bala.transform.position - transform.position).normalized;
+        // Configura la velocidad de la bala
+        bala.GetComponent<Rigidbody2D>().velocity = bulDir * moveSpeedFire;
+
+    }
 
 
 

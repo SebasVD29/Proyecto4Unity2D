@@ -305,7 +305,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &205805036
 Transform:
   m_ObjectHideFlags: 0
@@ -334,6 +334,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledBullet: {fileID: 7041725647096978775, guid: 236e750022b15b54087fb8ec0a9e641b, type: 3}
+  notEnoughBulletsInPool: 1
+  bullets: []
 --- !u!1 &207342420
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,7 +723,6 @@ GameObject:
   - component: {fileID: 392397364}
   - component: {fileID: 392397365}
   - component: {fileID: 392397366}
-  - component: {fileID: 392397367}
   - component: {fileID: 392397368}
   - component: {fileID: 392397369}
   - component: {fileID: 392397370}
@@ -821,23 +822,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &392397367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 392397363}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b725b111bf0244e4eb38967bf529a201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletsAmount: 10
-  startAngle: 90
-  endAngle: 180
-  startTime: 0
-  endTime: 2
 --- !u!70 &392397368
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -913,15 +897,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeStateToChange: 1
+  timeToBulletFire: 0
+  divisiones: 10
+  radioCirculo: 1
+  timePositionTP: 5
+  countdownTP: 0
   state: 0
   attackState: 0
   moveSpeed: 1
   moveSpeedFire: 5
   positions:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 387160093}
+  - {fileID: 357710195}
+  - {fileID: 19425650}
+  - {fileID: 719041121}
+  - {fileID: 818299045}
+  - {fileID: 1671364121}
   player: {fileID: 1979623760}
   fireBulletPrefab: {fileID: 7041725647096978775, guid: 236e750022b15b54087fb8ec0a9e641b, type: 3}
   PilarExplosivePrefab: {fileID: 3267698006105233917, guid: 63a353d446cb0d244a97af4c9d587865, type: 3}
@@ -2459,7 +2450,7 @@ Transform:
   m_GameObject: {fileID: 1979623760}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.91, y: -1.43, z: 0}
+  m_LocalPosition: {x: -2.81, y: -1.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

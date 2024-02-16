@@ -11,12 +11,11 @@ GameObject:
   - component: {fileID: 3571960556270584147}
   - component: {fileID: 4955992122525521657}
   - component: {fileID: 8381085575782212270}
-  - component: {fileID: 8650699962960704349}
   - component: {fileID: 5934473663080613621}
   - component: {fileID: 812209495781843144}
   - component: {fileID: -3699142460338116973}
   m_Layer: 0
-  m_Name: fireball
+  m_Name: FireBall
   m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,18 +109,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8650699962960704349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7041725647096978775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b13bd376ddd8ef04585d00a74478c44e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!58 &5934473663080613621
 CircleCollider2D:
   m_ObjectHideFlags: 0
