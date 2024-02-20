@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Boss
+  - Attack
   layers:
   - Default
   - TransparentFX
@@ -40,4 +42,25 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2276792077
+    locked: 0
+  - name: Ambiente
+    uniqueID: 3915613057
+    locked: 0
+  - name: Attack
+    uniqueID: 1956027091
+    locked: 0
+  - name: Player
+    uniqueID: 279171157
+    locked: 0
+  - name: Enemigo
+    uniqueID: 691754747
+    locked: 0
+  - name: AmbientePorEncima
+    uniqueID: 3954936443
+    locked: 0
+  - name: Objetos
+    uniqueID: 855856897
     locked: 0
