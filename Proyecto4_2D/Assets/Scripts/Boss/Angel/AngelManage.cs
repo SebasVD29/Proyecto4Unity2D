@@ -256,7 +256,6 @@ public class AngelManage : MonoBehaviour
         }
         yield return new WaitForSeconds(7f);
     }
-
     IEnumerator PilarLateralAttck()
     {
         
