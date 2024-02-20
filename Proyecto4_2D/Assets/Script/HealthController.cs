@@ -1,38 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
+using Debug = UnityEngine.Debug;
 
-public class NewBehaviourScript : MonoBehaviour
+public class HealthController : MonoBehaviour
 {
-
-    public Image HealthBar;
+    public Image BarradeVida;
     public float vidaActual;
     public float vidaMaxima;
 
     void Start()
     {
-        
+        vidaActual = vidaMaxima; // Inicializar la vida actual con la vida máxima al inicio del juego
+        UpdateHealthBar(); // Actualizar la barra de vida al inicio
     }
 
     // Update is called once per frame
     void Update()
     {
-        HealthBar.fillAmount = vidaActual / vidaMaxima;
-        
+        BarradeVida.fillAmount = vidaActual / vidaMaxima;
     }
 
-    // // Función para dañar al jugador
+    void UpdateHealthBar()
+    {
+        vidaActual = Mathf.Clamp(vidaActual, 0, vidaMaxima);
+        BarradeVida.fillAmount = vidaActual / vidaMaxima;
+    }
 
-
+    // Función para dañar al jugador
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage; // Reducir la vida actual por la cantidad de daño recibido
+        vidaActual -= damage; // Reducir la vida actual por la cantidad de daño recibido
         UpdateHealthBar(); // Actualizar la barra de vida después del daño
 
         // Verificar si el jugador ha muerto
-        if (currentHealth <= 0)
+        if (vidaActual <= 0)
         {
             Die();
         }
@@ -41,7 +44,7 @@ public class NewBehaviourScript : MonoBehaviour
     // Función para curar al jugador
     public void Heal(int healAmount)
     {
-        currentHealth += healAmount; // Incrementar la vida actual por la cantidad de curación recibida
+        vidaActual += healAmount; // Incrementar la vida actual por la cantidad de curación recibida
         UpdateHealthBar(); // Actualizar la barra de vida después de la curación
     }
 
@@ -51,8 +54,4 @@ public class NewBehaviourScript : MonoBehaviour
         // Aquí puedes agregar lógica adicional, como mostrar un mensaje de game over o reiniciar el nivel.
         Debug.Log("Game Over");
     }
-
-
-
-
 }
