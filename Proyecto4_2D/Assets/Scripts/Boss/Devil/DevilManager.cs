@@ -5,8 +5,6 @@ using UnityEngine;
 public enum DevilState
 {
     Idel,
-   // Walk,
-   // Teleport,
     Cast,
     NormalAttack,
     SpecialAttack,
@@ -16,6 +14,7 @@ public enum DevilState
 public class DevilManager : MonoBehaviour
 {
     public float timeStateToChange;
+    public float timeToSpecialAttack = 0.4f;
 
     public DevilState state;
 
@@ -25,12 +24,13 @@ public class DevilManager : MonoBehaviour
 
     [Header("Movement")]
     public float moveSpeed;
-    public float moveSpeedFire;
-    private bool mirarIzquierda = true;
+    public float moveSpeedAttack;
+    public bool mirarIzquierda = true;
     private Vector2 moveDirection;
 
     public Transform[] positionsTP;
     public Transform normalAttackPosition;
+    public Transform specialAttackPosition;
 
 
 
@@ -62,8 +62,8 @@ public class DevilManager : MonoBehaviour
     }
     IEnumerator DevilStateChange()
     {
-        //int randomState = Random.Range(1, 5);
-        int randomState = 3;
+        int randomState = Random.Range(1, 5);
+        //int randomState = 3;
         yield return new WaitForSeconds(timeStateToChange);
         switch (randomState)
         {
@@ -149,7 +149,25 @@ public class DevilManager : MonoBehaviour
         animatorDevil.SetTrigger("Tp");
         yield return new WaitForSeconds(0.8f);
         transform.position = positionsTP[randomPosition].position;
-        //yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.3f);
+        animatorDevil.SetTrigger("SAttack");
+        yield return new WaitForSeconds(timeToSpecialAttack);
+
+        if (mirarIzquierda == true)
+        {
+            GameObject special = Instantiate(SpecialAttack, specialAttackPosition.position, Quaternion.identity);
+            special.transform.SetParent(specialAttackPosition);
+            special.transform.Rotate(new Vector3(0, 0, 0));
+            special.GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeedAttack, 0);
+        }
+        else
+        {
+            GameObject special = Instantiate(SpecialAttack, specialAttackPosition.position, Quaternion.identity);
+            special.transform.SetParent(specialAttackPosition);
+            special.transform.Rotate(new Vector3(0, 180, 0));
+            special.GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeedAttack, 0);
+
+        }
     }
 
     void MirarJugador()
@@ -159,11 +177,6 @@ public class DevilManager : MonoBehaviour
             mirarIzquierda = !mirarIzquierda;
             transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + 180, 0);
         }
-    }
-
-    void AtaqueNormal()
-    {
-
     }
 
 }

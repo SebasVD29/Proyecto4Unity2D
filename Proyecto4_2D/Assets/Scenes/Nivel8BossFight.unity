@@ -264,13 +264,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeStateToChange: 2
+  timeToSpecialAttack: 0.4
   state: 0
   moveSpeed: 6
-  moveSpeedFire: 0
+  moveSpeedAttack: 10
+  mirarIzquierda: 1
   positionsTP:
   - {fileID: 1980668033}
   - {fileID: 1046235019}
   normalAttackPosition: {fileID: 1732416142}
+  specialAttackPosition: {fileID: 1687470107}
   player: {fileID: 1979623760}
   SpecialAttack: {fileID: 723320158597121897, guid: 65183317f5f6cde4ba91574e5a7ac4ed, type: 3}
   SpellAttack: {fileID: 2589307988842242005, guid: f748eeb9b3e8c01478312f6932c20aa6, type: 3}
@@ -2309,6 +2312,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 603279508882003952, guid: c46184cf7ea7e6c4eb084fec1d8d81b7, type: 3}
   m_PrefabInstance: {fileID: 1686882224}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1687470106
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1687470107}
+  m_Layer: 0
+  m_Name: SpecialAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1687470107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687470106}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.461, y: -0.349, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2101374893}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1708058774
 GameObject:
   m_ObjectHideFlags: 0
@@ -2653,7 +2687,7 @@ Transform:
   m_GameObject: {fileID: 1979623760}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.79, z: 0}
+  m_LocalPosition: {x: 0.03, y: -1.79, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2784,6 +2818,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1732416142}
+  - {fileID: 1687470107}
   m_Father: {fileID: 47334558}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2101374894
