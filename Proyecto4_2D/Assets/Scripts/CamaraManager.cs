@@ -5,21 +5,7 @@ using UnityEngine;
 public class CamaraManager : MonoBehaviour
 {
 
-    public GameObject player;
-    private Vector3 movimiento;
-    // Start is called before the first frame update
-    void Start()
-    {
-        movimiento = transform.position - player.transform.position;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void LateUpdate()
+    /*private void LateUpdate()
     {
         if (player.transform.position.x < 5)
         {
@@ -36,5 +22,29 @@ public class CamaraManager : MonoBehaviour
 
         }
 
+    }*/
+
+    public GameObject Player;
+    private Vector3 move;
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        move = transform.position - Player.transform.position;
+    }
+
+    // Update is called once per frame
+    void LateUpdate()
+    {
+        if (Player.transform.position.x < 5)
+        {
+            transform.position = new Vector3(5, 0, -10);
+        }
+        else
+        {
+            transform.position = Player.transform.position + move;
+        }
+            
     }
 }
