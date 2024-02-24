@@ -40,8 +40,8 @@ public class DevilManager : MonoBehaviour
 
     public float distanciaDeAtaque;
     private float distanciaCalculadaDeAtaque;
-    public float radioDeAttack;
-    public float dañoDeAttack;
+    //public float radioDeAttack;
+   // public float dañoDeAttack;
 
 
     // Start is called before the first frame update
@@ -56,7 +56,7 @@ public class DevilManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distanciaCalculadaDeAtaque = Vector2.Distance(transform.position, player.transform.position);
+        //distanciaCalculadaDeAtaque = Vector2.Distance(transform.position, player.transform.position);
         moveDirection = (player.transform.position - transform.position).normalized * moveSpeed;
         MirarJugador();
     }
@@ -134,7 +134,7 @@ public class DevilManager : MonoBehaviour
         animatorDevil.SetTrigger("Walking");
         bossRB.velocity = new Vector2(moveDirection.x, moveDirection.y);
 
-        //distanciaCalculadaDeAtaque = Vector2.Distance(transform.position, player.transform.position);
+        distanciaCalculadaDeAtaque = Vector2.Distance(player.transform.position, transform.position);
         Debug.Log(distanciaCalculadaDeAtaque);
         yield return new WaitForSeconds(0.2f);
         if (distanciaCalculadaDeAtaque < distanciaDeAtaque)
