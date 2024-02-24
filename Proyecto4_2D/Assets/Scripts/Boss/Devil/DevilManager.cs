@@ -35,11 +35,14 @@ public class DevilManager : MonoBehaviour
 
 
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject NormalAttackGO;
     [SerializeField] private GameObject SpecialAttack;
     [SerializeField] private GameObject SpellAttack;
 
     public float distanciaDeAtaque;
     private float distanciaCalculadaDeAtaque;
+
+    private bool triggerNAttack = false;
     //public float radioDeAttack;
    // public float dañoDeAttack;
 
@@ -133,11 +136,8 @@ public class DevilManager : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         animatorDevil.SetTrigger("Walking");
         bossRB.velocity = new Vector2(moveDirection.x, moveDirection.y);
-
-        distanciaCalculadaDeAtaque = Vector2.Distance(player.transform.position, transform.position);
-        Debug.Log(distanciaCalculadaDeAtaque);
-        yield return new WaitForSeconds(0.2f);
-        if (distanciaCalculadaDeAtaque < distanciaDeAtaque)
+        triggerNAttack = NormalAttackGO.GetComponent<NormalAttack>().triggerNormalAttack;
+        if (triggerNAttack == true)
         {
             animatorDevil.SetTrigger("NAttack");
 
