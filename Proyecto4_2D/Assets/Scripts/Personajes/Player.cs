@@ -39,12 +39,7 @@ public class Player : MonoBehaviour
 
     Animator animator;
 
-    
-
-   
-    
-    
-
+ 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -153,6 +148,10 @@ public class Player : MonoBehaviour
             animator.SetBool("DoubleJump", false);
             animator.SetBool("Fall", false);
             animator.SetBool("Dash", false);
+        }
+        else
+        {
+            animator.SetBool("Jump", true);
         }
         //Para caer
         if (rb.velocity.y < 0)

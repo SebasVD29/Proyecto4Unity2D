@@ -62,8 +62,8 @@ public class DevilManager : MonoBehaviour
     }
     IEnumerator DevilStateChange()
     {
-        int randomState = Random.Range(1, 5);
-        //int randomState = 3;
+        //int randomState = Random.Range(1, 5);
+        int randomState = 3;
         yield return new WaitForSeconds(timeStateToChange);
         switch (randomState)
         {

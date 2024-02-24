@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpecialAttack : MonoBehaviour
 {
-    public float timeLife = 3f;
+    public float timeLife = 0.5f;
     private void Awake()
     {
         Destroy(gameObject, timeLife);
