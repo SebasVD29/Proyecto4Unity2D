@@ -3,20 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Daño : MonoBehaviour
+public class PlayerRespawn : MonoBehaviour
 {
     Animator animator;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    // Start is called before the first frame update
+    void Start()
     {
-        if (collision.transform.CompareTag("Player"))
-        {
-            Destroy(collision.gameObject);
-            collision.gameObject.GetComponent<PlayerRespawn>().PlayerDameged();
-        }
+        //Asigna el animator al iniciar el nivel 
+        animator = GetComponent<Animator>();
+        //Obtiene el nivel actual 
+        string actualLevel = SceneManager.GetActiveScene().name;
+        
     }
-    
-    /*
     public void PlayerDameged()
     {
         animator.Play("Hit");
@@ -26,5 +25,5 @@ public class Daño : MonoBehaviour
     void LoadLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }*/
+    }
 }
