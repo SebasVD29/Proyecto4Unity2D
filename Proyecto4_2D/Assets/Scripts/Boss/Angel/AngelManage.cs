@@ -23,38 +23,43 @@ public enum AngelAttacks
 
 public class AngelManage : MonoBehaviour
 {
+
+    [Header("Times")]
     public float timeStateToChange;
-    public float timeToBulletFire;
-    public float divisiones;
-    public float radioCirculo;
-    public float timePositionTP, countdownTP;
+    public float timeToAttack;
+
+    [Header("Estados")]
     public AngelState state;
     public AngelAttacks attackState;
-    private Vector3 positionStart = new Vector3(2.7f,0.3f,0f);
-
     int index=0, index2;
     
-    [Header("Movement")]
-    public float moveSpeed;
-    public float moveSpeedFire;
-
-
     [Header("Posiciones")]
+    public float timePositionTP;
+    public float countdownTP;
     public Transform[] positions;
     
-
     [Header("Components")]
     private Animator animatorAngel;
     private Rigidbody2D bossRB;
 
-    [Header("Attack Objects")]
+    [Header("General Attack")]
     [SerializeField] private GameObject player;
-    [SerializeField] private GameObject fireBulletPrefab;
-    [SerializeField] private GameObject PilarExplosivePrefab;
-
-    [Header("Positions Attack")]
     [SerializeField] private Transform spawnAttack;
+
+
+    [Header("Bullet Attack")]
+    public float moveSpeedFire;
+    [SerializeField] private GameObject fireBulletPrefab;
+
+    [Header("BulletHell Attack")]
+    public float divisiones;
+    public float radioCirculo;
+
+    [Header("Pilar Attack")]
+    [SerializeField] private GameObject PilarExplosivePrefab;
     [SerializeField] private Transform[] positionsPilar;
+
+    [Header("Columna Attack")]
     [SerializeField] private Transform[] positionsColumnas;
 
     // Start is called before the first frame update
@@ -85,8 +90,6 @@ public class AngelManage : MonoBehaviour
         }
 
     }
-
-
     IEnumerator AngelStateChange()
     {
         int randomState = Random.Range(1, 3);
@@ -112,12 +115,11 @@ public class AngelManage : MonoBehaviour
         }
         StateChanger();
     }
-
     IEnumerator AngelAttackStateChange()
     {
         int randomAttack = Random.Range(1, 7);
        // int randomAttack = 6;
-        yield return new WaitForSeconds(timeStateToChange);
+        yield return new WaitForSeconds(timeToAttack);
         switch (randomAttack)
         {
             case 1:
@@ -165,7 +167,6 @@ public class AngelManage : MonoBehaviour
                 break;
         }
     }
-
     public void AttackStateChanger()
     {
         switch (attackState)
@@ -192,7 +193,6 @@ public class AngelManage : MonoBehaviour
                 break;
         }
     }
-
     IEnumerator Bullet()
     {
         GameObject Fire = Instantiate(fireBulletPrefab, spawnAttack.position, Quaternion.identity);
@@ -291,11 +291,10 @@ public class AngelManage : MonoBehaviour
             float velocidad = 1;
             CrearBala(angulo, velocidad);
         }
-        yield return new WaitForSeconds(timeToBulletFire);
+        yield return new WaitForSeconds(0f);
        
 
     }
-
     void CrearBala(float angulo, float velocidad)
     {
         // Calcula las coordenadas x e y basándote en el ángulo y el radio

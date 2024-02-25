@@ -39,13 +39,37 @@ public class CamaraManager : MonoBehaviour
         if (Player.transform.position.x < limiteXIzquierdo)
         {
             //La camara toma la posicion del limite en -X
-            transform.position = new Vector3(limiteXIzquierdo, 0.8f, -10);
+            transform.position = new Vector3(limiteXIzquierdo, limiteYAbajo, -10);
+
+            //Si la posicion del jugador en -Y esta mas abajo que el limite en -Y
+            if (Player.transform.position.y < limiteYAbajo)
+            {
+                //La camara toma la posicion del limite en -Y y la posicion del jugador en X
+                transform.position = new Vector3(limiteXIzquierdo, limiteYAbajo, -10);
+            }
+            else
+            {
+                //sino(la posicion del jugador esta mas arriba del limite en -Y) la camara toma la posicion que tiene el jugador en Y
+                transform.position = new Vector3(limiteXIzquierdo, Player.transform.position.y, -10);
+            }
         }
         //Si la posicion del jugador en +X esta mas a la derecha que en el limite en +X
         if (Player.transform.position.x > limiteXDerecho)
         {
             //La camara toma la posicion del limite en +X
-            transform.position = new Vector3(limiteXDerecho, 0.8f, -10);
+            transform.position = new Vector3(limiteXDerecho, limiteYAbajo, -10);
+
+            //Si la posicion del jugador en -Y esta mas abajo que el limite en -Y
+            if (Player.transform.position.y < limiteYAbajo)
+            {
+                //La camara toma la posicion del limite en -Y y la posicion del jugador en X
+                transform.position = new Vector3(limiteXDerecho, limiteYAbajo, -10);
+            }
+            else
+            {
+                //sino(la posicion del jugador esta mas arriba del limite en -Y) la camara toma la posicion que tiene el jugador en Y
+                transform.position = new Vector3(limiteXDerecho, Player.transform.position.y, -10);
+            }
         }
     }
 }

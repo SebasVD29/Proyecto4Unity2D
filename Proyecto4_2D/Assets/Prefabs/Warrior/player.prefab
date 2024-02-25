@@ -339,6 +339,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5226520761086389036}
   - component: {fileID: 6041233896071370783}
+  - component: {fileID: 560184220548537467}
   m_Layer: 0
   m_Name: Grounded
   m_TagString: Untagged
@@ -406,3 +407,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4381008, y: 0.14168835}
   m_EdgeRadius: 0
+--- !u!114 &560184220548537467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8028931333334228754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caab048064e066e49a7234d469adf6c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

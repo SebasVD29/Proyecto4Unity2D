@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NormalAttack : MonoBehaviour
 {
-    public bool triggerNormalAttack = false;
+    public static bool triggerNormalAttack;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -14,4 +14,12 @@ public class NormalAttack : MonoBehaviour
             //Destroy(this.gameObject);
         }
     }
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    if (collision.CompareTag("Ground"))
+    //    {
+    //        triggerNormalAttack = false;
+    //    }
+    //    triggerNormalAttack = false;
+    //}
 }
