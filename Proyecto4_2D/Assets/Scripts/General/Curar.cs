@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Curar : MonoBehaviour
 {
-    public float CantidadCura;
+    public float CantidadCura=20;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
