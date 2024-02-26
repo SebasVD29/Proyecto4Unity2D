@@ -18,6 +18,7 @@ public class Curar : MonoBehaviour
             UnityEngine.Debug.Log("Player entered trigger collider.");
             other.GetComponent<CodigoSalud>().RecibirCura(CantidadCura);
 
+            Destroy(gameObject);
 
          }
 

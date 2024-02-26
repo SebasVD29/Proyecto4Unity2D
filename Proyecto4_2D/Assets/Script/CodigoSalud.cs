@@ -26,6 +26,12 @@ public class CodigoSalud : MonoBehaviour
 
         Salud += cura;
 
+        if (Salud > SaludMaxima) {
+
+            Salud = SaludMaxima;
+
+        }
+
     }
     public void RecibirDano(float dano)
 
@@ -38,6 +44,7 @@ public class CodigoSalud : MonoBehaviour
         {
             Salud = 0;
             UnityEngine.Debug.Log("El jugador ha perdido toda la salud.");
+            Destroy(gameObject);
           
         }
         UnityEngine.Debug.Log("El jugador ha recibido " + dano + " puntos de daño. Salud actual: " + Salud);
