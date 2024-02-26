@@ -3,9 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
-
-
 {
+
+    public static Player instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
+
+
+
     bool canJump = true;
     public float velocidadDeMovimiento;
     public float runSpeed = 2;
@@ -39,12 +51,7 @@ public class Player : MonoBehaviour
 
     Animator animator;
 
-    
-
-   
-    
-    
-
+ 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -153,6 +160,10 @@ public class Player : MonoBehaviour
             animator.SetBool("DoubleJump", false);
             animator.SetBool("Fall", false);
             animator.SetBool("Dash", false);
+        }
+        else
+        {
+            animator.SetBool("Jump", true);
         }
         //Para caer
         if (rb.velocity.y < 0)

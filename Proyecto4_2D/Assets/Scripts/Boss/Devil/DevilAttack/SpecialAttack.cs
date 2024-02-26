@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fire : MonoBehaviour
+public class SpecialAttack : MonoBehaviour
 {
-    public float timeLife = 3f;
+    public float timeLife = 0.5f;
     private void Awake()
     {
         Destroy(gameObject, timeLife);
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
