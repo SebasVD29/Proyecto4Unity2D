@@ -12,7 +12,7 @@ public class CodigoSalud : MonoBehaviour
 
     [Header("Interfaz")]
     public Image BarraSalud;
-   // public Text TextoSalud;
+    public Text TextoSalud;
 
     
 
@@ -43,15 +43,27 @@ public class CodigoSalud : MonoBehaviour
             Salud = 0;
             UnityEngine.Debug.Log("El jugador ha perdido toda la salud.");
            // Destroy(gameObject);
+           
         }
         UnityEngine.Debug.Log("El jugador ha recibido " + dano + " puntos de daño. Salud actual: " + Salud);
+    
+    
+      if (Salud==0)
+        {
+
+        gameObject.GetComponent<PlayerRespawn>().PlayerDameged();
+
+
+        }
+    
     }
 
     public void ActualizarInterfaz()
     {
         BarraSalud.fillAmount = Salud / SaludMaxima;
-       // TextoSalud.text = "Salud: " + Salud.ToString("f0");
+        TextoSalud.text = "Salud: " + Salud.ToString("f0");
     }
 
 
 }
+

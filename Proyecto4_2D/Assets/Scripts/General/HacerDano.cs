@@ -14,7 +14,7 @@ public class HacerDano : MonoBehaviour
         {
             Debug.Log("Player Dano");
             collision.GetComponent<CodigoSalud>().RecibirDano(CantidadDano);
-
+           
         }
     }
 

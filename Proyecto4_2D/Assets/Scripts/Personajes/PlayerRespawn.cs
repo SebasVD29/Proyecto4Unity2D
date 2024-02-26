@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerRespawn : MonoBehaviour
 {
+  
     Animator animator;
 
     // Start is called before the first frame update
@@ -16,14 +17,22 @@ public class PlayerRespawn : MonoBehaviour
         string actualLevel = SceneManager.GetActiveScene().name;
         
     }
-    public void PlayerDameged()
+     public void ReachedCheckPoint(string level, float x, float y)
+    {
+        PlayerPrefs.SetString("checkPointLevel", level);
+        PlayerPrefs.SetFloat("checkPointX", x);
+        PlayerPrefs.SetFloat("checkPointY", y);
+    }
+      public void PlayerDameged()
     {
         animator.Play("Hit");
         Invoke("LoadLevel", 1);
     }
+
 
     void LoadLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
+
