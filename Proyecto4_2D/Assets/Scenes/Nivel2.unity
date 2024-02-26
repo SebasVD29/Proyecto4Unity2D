@@ -7595,25 +7595,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4707928089756324099, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: jumpSpeed
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 5817479114769522446, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
       propertyPath: m_Name
       value: player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6041233896071370783, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: m_Size.y
-      value: 0.050302505
-      objectReference: {fileID: 0}
-    - target: {fileID: 6041233896071370783, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: m_Offset.y
-      value: -2.0488944
-      objectReference: {fileID: 0}
-    - target: {fileID: 6884482312253998075, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: m_PreviewTimeScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9504,6 +9488,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67635b454081e7b46b309d67b1332ae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  limiteXIzquierdo: 5
+  limiteXDerecho: 25
+  limiteYArrbia: 3
+  limiteYAbajo: 0.6
   Player: {fileID: 1555356260}
 --- !u!1 &810922837
 GameObject:

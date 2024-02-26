@@ -132,10 +132,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidadDeMovimiento: 0
   runSpeed: 2
-  jumpSpeed: 3
-  doubleJumpSpeed: 3.5
-  tr: {fileID: 6884482312253998075}
-  betterJump: 0
+  jumpSpeed: 6
+  doubleJumpSpeed: 6
+  _dashingVelocity: 14
+  _dashingTime: 0.5
+  _active: 1
+  betterJump: 1
   fallMultiplier: 0.5
   lowJumpMultiplier: 1
 --- !u!114 &8875801317981615738
@@ -320,11 +322,11 @@ TrailRenderer:
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 0
+    textureMode: 1
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
-  m_MinVertexDistance: 0.1
+  m_MinVertexDistance: 0
   m_MaskInteraction: 0
   m_Autodestruct: 0
   m_Emitting: 0
@@ -394,7 +396,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 4.5354624, y: -1.9575088}
+  m_Offset: {x: 4.5354624, y: -2.0488944}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -405,7 +407,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4381008, y: 0.14168835}
+  m_Size: {x: 0.4381008, y: 0.050302505}
   m_EdgeRadius: 0
 --- !u!114 &560184220548537467
 MonoBehaviour:

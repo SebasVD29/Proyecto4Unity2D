@@ -144,6 +144,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 2621473414661807563, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053433594837660643, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062177825438115361, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.468033
@@ -183,6 +195,26 @@ PrefabInstance:
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172506149987270223, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6325516673500102751, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340938558949596864, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133072519618796120, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243262400641680008, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -833,6 +865,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 2621473414661807563, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053433594837660643, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062177825438115361, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.668035
@@ -872,6 +916,26 @@ PrefabInstance:
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172506149987270223, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6325516673500102751, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340938558949596864, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133072519618796120, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243262400641680008, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1265,6 +1329,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67635b454081e7b46b309d67b1332ae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  limiteXIzquierdo: 5
+  limiteXDerecho: 25
+  limiteYArrbia: 3
+  limiteYAbajo: 0.6
   Player: {fileID: 1865111632}
 --- !u!1 &526343125
 GameObject:
@@ -1371,6 +1439,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 2621473414661807563, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053433594837660643, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062177825438115361, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.468034
@@ -1410,6 +1490,26 @@ PrefabInstance:
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172506149987270223, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6325516673500102751, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340938558949596864, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133072519618796120, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243262400641680008, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1509,6 +1609,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 2621473414661807563, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053433594837660643, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062177825438115361, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.86803
@@ -1548,6 +1660,26 @@ PrefabInstance:
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172506149987270223, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6325516673500102751, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340938558949596864, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133072519618796120, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243262400641680008, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1880,6 +2012,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 2621473414661807563, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053433594837660643, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062177825438115361, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.868032
@@ -1919,6 +2063,26 @@ PrefabInstance:
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172506149987270223, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6325516673500102751, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340938558949596864, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133072519618796120, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243262400641680008, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2214,6 +2378,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 2621473414661807563, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053433594837660643, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062177825438115361, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18.268032
@@ -2253,6 +2429,26 @@ PrefabInstance:
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172506149987270223, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6325516673500102751, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340938558949596864, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133072519618796120, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243262400641680008, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2359,6 +2555,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 2621473414661807563, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053433594837660643, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062177825438115361, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 22.26803
@@ -2398,6 +2606,26 @@ PrefabInstance:
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172506149987270223, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6325516673500102751, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340938558949596864, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133072519618796120, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243262400641680008, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2565,6 +2793,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 2621473414661807563, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053433594837660643, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062177825438115361, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.068031
@@ -2604,6 +2844,26 @@ PrefabInstance:
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172506149987270223, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6325516673500102751, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340938558949596864, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133072519618796120, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243262400641680008, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3627,6 +3887,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 2621473414661807563, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053433594837660643, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062177825438115361, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.068037
@@ -3666,6 +3938,26 @@ PrefabInstance:
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172506149987270223, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6325516673500102751, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340938558949596864, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133072519618796120, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243262400641680008, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3894,6 +4186,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 2621473414661807563, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053433594837660643, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062177825438115361, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.468038
@@ -3933,6 +4237,26 @@ PrefabInstance:
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172506149987270223, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6325516673500102751, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340938558949596864, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133072519618796120, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243262400641680008, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4127,6 +4451,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 2621473414661807563, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053433594837660643, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062177825438115361, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.068033
@@ -4166,6 +4502,26 @@ PrefabInstance:
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172506149987270223, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6325516673500102751, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340938558949596864, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133072519618796120, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243262400641680008, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4272,6 +4628,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 2621473414661807563, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053433594837660643, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062177825438115361, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.268034
@@ -4311,6 +4679,26 @@ PrefabInstance:
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172506149987270223, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6325516673500102751, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340938558949596864, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133072519618796120, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243262400641680008, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5253,6 +5641,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 2621473414661807563, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053433594837660643, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062177825438115361, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.668032
@@ -5292,6 +5692,26 @@ PrefabInstance:
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172506149987270223, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6325516673500102751, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340938558949596864, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133072519618796120, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243262400641680008, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5870,6 +6290,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 2621473414661807563, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053433594837660643, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062177825438115361, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.868036
@@ -5909,6 +6341,26 @@ PrefabInstance:
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172506149987270223, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6325516673500102751, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340938558949596864, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133072519618796120, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243262400641680008, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6108,14 +6560,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4707928089756324099, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: jumpSpeed
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4707928089756324099, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: doubleJumpSpeed
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 5817479114769522446, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
       propertyPath: m_Name
       value: player
@@ -6133,25 +6577,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1593142160}
     m_Modifications:
-    - target: {fileID: 372959377070866996, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 372959377070866996, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 372959377070866996, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -379354239
-      objectReference: {fileID: 0}
     - target: {fileID: 2253802213648406159, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_Name
       value: FloorTown
-      objectReference: {fileID: 0}
-    - target: {fileID: 2253802213648406159, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
-      propertyPath: m_TagString
-      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6192,30 +6620,6 @@ PrefabInstance:
     - target: {fileID: 4881571737285107549, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207129323057300945, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207129323057300945, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207129323057300945, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -379354239
-      objectReference: {fileID: 0}
-    - target: {fileID: 6626533676929374259, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6626533676929374259, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6626533676929374259, guid: 393fc98cf90aaa3449cd4889e4c3e00c, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -379354239
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
