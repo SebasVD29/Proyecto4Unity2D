@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Boss
   - Attack
+  - Ground
+  - Salud
+  - Enemigo
   layers:
   - Default
   - TransparentFX
