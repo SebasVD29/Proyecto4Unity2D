@@ -22,6 +22,11 @@ public class CodigoSalud : MonoBehaviour
         ActualizarInterfaz();
     }
 
+    public void RecibirCura(float cura) {
+
+        Salud += cura;
+
+    }
     public void RecibirDano(float dano)
 
     {
