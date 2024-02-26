@@ -166,6 +166,8 @@ GameObject:
   - component: {fileID: 47334561}
   - component: {fileID: 47334560}
   - component: {fileID: 47334559}
+  - component: {fileID: 47334563}
+  - component: {fileID: 47334562}
   m_Layer: 0
   m_Name: Muerte
   m_TagString: Boss
@@ -280,6 +282,36 @@ MonoBehaviour:
   SpecialAttack: {fileID: 723320158597121897, guid: 65183317f5f6cde4ba91574e5a7ac4ed, type: 3}
   specialAttackPosition: {fileID: 1687470107}
   SpellAttack: {fileID: 2589307988842242005, guid: f748eeb9b3e8c01478312f6932c20aa6, type: 3}
+--- !u!114 &47334562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47334557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9000a4c6753abf844a83ee4f5fca68ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossEnemy: {fileID: 0}
+  boss: {fileID: 266565678}
+  bossAnimator: {fileID: 2101374894}
+--- !u!114 &47334563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47334557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d112e1c750c20f4b827ab041a277a34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossName: Yelig-nar
+  bossHealth: 10
+  bossDamage: 10
 --- !u!1 &84037596
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,9 +623,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossHealthPanel: {fileID: 1708058774}
   bossBackgroundAnimator: {fileID: 1028063577}
-  boss: {fileID: 1270469099}
-  bossHealth: 10
-  currentBossHealth: 0
+  bossAngel: {fileID: 0}
+  bossDevil: {fileID: 0}
+  bossHealthTotal: 0
+  currentAngelHealth: 0
+  currentDevilHealth: 0
   bossHealthBar: {fileID: 578763492}
   bossName: {fileID: 1570223974}
 --- !u!1001 &259138496
@@ -667,8 +701,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 266565679}
-  - component: {fileID: 266565681}
-  - component: {fileID: 266565680}
   m_Layer: 0
   m_Name: Devil
   m_TagString: Boss
@@ -693,35 +725,6 @@ Transform:
   - {fileID: 1553838448}
   m_Father: {fileID: 1270469100}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &266565680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 266565678}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9000a4c6753abf844a83ee4f5fca68ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bossEnemy: {fileID: 0}
-  Arcangel: {fileID: 0}
---- !u!114 &266565681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 266565678}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d112e1c750c20f4b827ab041a277a34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bossName: Yelig-nar
-  bossHealth: 10
-  bossDamage: 10
 --- !u!1001 &317447539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1138,7 +1141,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossEnemy: {fileID: 0}
-  Arcangel: {fileID: 165369460}
+  boss: {fileID: 0}
+  bossAnimator: {fileID: 392397366}
 --- !u!114 &392397372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3360,7 +3364,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1708058775
 RectTransform:
   m_ObjectHideFlags: 0

@@ -12,9 +12,12 @@ public class BossGeneralManager : MonoBehaviour
     public static BossGeneralManager instance;
 
     [Header("Boss")]
-    [SerializeField] GameObject boss;
-    public float bossHealth;
-    public float currentBossHealth;
+    [SerializeField] GameObject bossAngel;
+    [SerializeField] GameObject bossDevil;
+
+    public float bossHealthTotal;
+    public float currentAngelHealth;
+    public float currentDevilHealth;
 
     public Image bossHealthBar;
     public Text bossName;
@@ -29,14 +32,14 @@ public class BossGeneralManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        bossHealthTotal = bossAngel.GetComponentInChildren<BossEnemy>().bossHealth + bossDevil.GetComponentInChildren<BossEnemy>().bossHealth;
         bossHealthPanel.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        BossDamage();
+        ChangeBoss();
     }
 
     public void BossActivator()
@@ -44,17 +47,13 @@ public class BossGeneralManager : MonoBehaviour
         bossHealthPanel.SetActive(true);
     }
 
-    void BossDamage()
-    {
-        bossName.text = boss.GetComponentInChildren<BossEnemy>().bossName;
-        currentBossHealth = boss.GetComponentInChildren<BossEnemy>().bossHealth;
-        bossHealthBar.fillAmount = currentBossHealth / bossHealth;
-    }
-
     void ChangeBoss()
     {
-
+        
+        //bossHealthBar.fillAmount = currentBossHealth / bossHealthTotal;
     }
+
+    
 
 
 

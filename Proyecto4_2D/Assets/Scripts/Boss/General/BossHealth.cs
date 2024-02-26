@@ -5,7 +5,9 @@ using UnityEngine;
 public class BossHealth : MonoBehaviour
 {
     [SerializeField] BossEnemy bossEnemy;
-    [SerializeField] GameObject Arcangel;
+    [SerializeField] GameObject boss;
+    [SerializeField] Animator bossAnimator;
+
 
     private void Start()
     {
@@ -16,25 +18,19 @@ public class BossHealth : MonoBehaviour
         if (collision.CompareTag("PlayerAttack"))
         {
             bossEnemy.bossHealth -= /*Player.Damage*/ 5f ;
+            bossAnimator.SetTrigger("Hit");
             Debug.Log("DañoBoss");
             if (bossEnemy.bossHealth <= 0)
             {
-                Destroy(Arcangel);
+                if (BossGeneralManager.instance.currentAngelHealth <= 0)
+                {
+                    boss.SetActive(false);
+                }
+                if (BossGeneralManager.instance.currentDevilHealth <= 0)
+                {
+                    boss.SetActive(false);
+                }
             }
         }
     }
-
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.transform.CompareTag("PlayerAttack"))
-    //    {
-    //        bossEnemy.bossHealth -= /*Player.Damage*/ 5f;
-
-    //        if (bossEnemy.bossHealth <= 0)
-    //        {
-    //            Destroy(gameObject);
-    //        }
-    //    }
-
-    //}
 }
