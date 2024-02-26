@@ -1318,3 +1318,19 @@ Received Import Request.
 Start importing Assets/Script/CodigoSalud.cs using Guid(1f6d6d512da8f44c295f024f25355444) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a68392339e09660709bd0ad74db0d7cb') in 0.000968 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 766.440805 seconds.
+  path: Assets/Script/CodigoSalud.cs
+  artifactKey: Guid(1f6d6d512da8f44c295f024f25355444) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/CodigoSalud.cs using Guid(1f6d6d512da8f44c295f024f25355444) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0525777771a596bc742fa447101bdbb8') in 0.000286 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 15.830288 seconds.
+  path: Assets/Scripts/Personajes/PlayerRespawn.cs
+  artifactKey: Guid(893222071637bf84fb327889703a84aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Personajes/PlayerRespawn.cs using Guid(893222071637bf84fb327889703a84aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96f831634f837fc459147e639f003670') in 0.001473 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
