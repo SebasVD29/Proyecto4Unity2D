@@ -6,14 +6,14 @@ using UnityEngine.UI;
 
 public class HacerDano : MonoBehaviour
 {
-    public float CantidadDano=20;
+    public float CantidadDano;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("Player Daño");
-            collision.GetComponent<CodigoSalud>().RecibirDaño(CantidadDano);
+            Debug.Log("Player Dano");
+            collision.GetComponent<CodigoSalud>().RecibirDano(CantidadDano);
 
         }
     }

@@ -32,7 +32,7 @@ public class CodigoSalud : MonoBehaviour
         }
 
     }
-    public void RecibirDaño(float dano)
+    public void RecibirDano(float dano)
     {
 
         Salud -= dano;
