@@ -52,6 +52,7 @@ public class DevilManager : MonoBehaviour
         //state = DevilState.Idel;
         animatorDevil = GetComponentInChildren<Animator>();
         bossRB = GetComponent<Rigidbody2D>();
+        transform.position = positionsTP[0].position;
         StartCoroutine(DevilStateChange());
     }
 
@@ -64,8 +65,8 @@ public class DevilManager : MonoBehaviour
     }
     IEnumerator DevilStateChange()
     {
-        //int randomState = Random.Range(1, 5);
-        int randomState = 2;
+        int randomState = Random.Range(1, 5);
+        //int randomState = 2;
         yield return new WaitForSeconds(timeStateToChange);
         switch (randomState)
         {
@@ -117,7 +118,7 @@ public class DevilManager : MonoBehaviour
 
     IEnumerator ConjurarSpell()
     {
-        int randomPosition = Random.Range(0, 2);
+        int randomPosition = Random.Range(0, 3);
         animatorDevil.SetTrigger("Tp");
         yield return new WaitForSeconds(0.8f);
         transform.position = positionsTP[randomPosition].position;
@@ -134,7 +135,7 @@ public class DevilManager : MonoBehaviour
 
     IEnumerator NormalAttackMetodo()
     {
-        int randomPosition = Random.Range(0, 2);
+        int randomPosition = Random.Range(0, 3);
         animatorDevil.SetTrigger("Tp");
         yield return new WaitForSeconds(0.8f);
         transform.position = positionsTP[randomPosition].position;
@@ -156,7 +157,7 @@ public class DevilManager : MonoBehaviour
     }
     IEnumerator SpecialAttck()
     {
-        int randomPosition = Random.Range(0, 2);
+        int randomPosition = Random.Range(0, 3);
         animatorDevil.SetTrigger("Tp");
         yield return new WaitForSeconds(0.8f);
         transform.position = positionsTP[randomPosition].position;
