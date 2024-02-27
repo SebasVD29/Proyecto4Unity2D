@@ -167,7 +167,6 @@ GameObject:
   - component: {fileID: 47334560}
   - component: {fileID: 47334559}
   - component: {fileID: 47334563}
-  - component: {fileID: 47334562}
   m_Layer: 0
   m_Name: Muerte
   m_TagString: Boss
@@ -188,6 +187,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1041702330}
   - {fileID: 2101374893}
   m_Father: {fileID: 266565679}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -282,21 +282,6 @@ MonoBehaviour:
   SpecialAttack: {fileID: 723320158597121897, guid: 65183317f5f6cde4ba91574e5a7ac4ed, type: 3}
   specialAttackPosition: {fileID: 1687470107}
   SpellAttack: {fileID: 2589307988842242005, guid: f748eeb9b3e8c01478312f6932c20aa6, type: 3}
---- !u!114 &47334562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 47334557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9000a4c6753abf844a83ee4f5fca68ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bossEnemy: {fileID: 0}
-  boss: {fileID: 266565678}
-  bossAnimator: {fileID: 2101374894}
 --- !u!114 &47334563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,7 +407,7 @@ GameObject:
   - component: {fileID: 137053469}
   m_Layer: 0
   m_Name: Position (1)
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -623,13 +608,107 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossHealthPanel: {fileID: 1708058774}
   bossBackgroundAnimator: {fileID: 1028063577}
-  bossAngel: {fileID: 0}
-  bossDevil: {fileID: 0}
+  bossAngel: {fileID: 165369460}
+  bossDevil: {fileID: 266565678}
   bossHealthTotal: 0
+  angelHealthTotal: 0
+  devilHealthTotal: 0
   currentAngelHealth: 0
   currentDevilHealth: 0
   bossHealthBar: {fileID: 578763492}
   bossName: {fileID: 1570223974}
+--- !u!1 &254934465
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 254934466}
+  - component: {fileID: 254934468}
+  - component: {fileID: 254934467}
+  m_Layer: 0
+  m_Name: AngelPoint
+  m_TagString: Boss
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &254934466
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254934465}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 392397364}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &254934467
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254934465}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.018464968, y: -0.28620708}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.48298064, y: 1.2769749}
+  m_EdgeRadius: 0
+--- !u!114 &254934468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254934465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9000a4c6753abf844a83ee4f5fca68ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossEnemy: {fileID: 392397372}
+  bossAnimator: {fileID: 392397366}
 --- !u!1001 &259138496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -926,7 +1005,6 @@ GameObject:
   - component: {fileID: 392397369}
   - component: {fileID: 392397370}
   - component: {fileID: 392397372}
-  - component: {fileID: 392397371}
   m_Layer: 0
   m_Name: Angel
   m_TagString: Boss
@@ -947,6 +1025,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 254934466}
   - {fileID: 1585848003}
   m_Father: {fileID: 165369461}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1128,21 +1207,6 @@ MonoBehaviour:
   - {fileID: 1295195511}
   - {fileID: 1182804727}
   - {fileID: 119798913}
---- !u!114 &392397371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 392397363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9000a4c6753abf844a83ee4f5fca68ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bossEnemy: {fileID: 0}
-  boss: {fileID: 0}
-  bossAnimator: {fileID: 392397366}
 --- !u!114 &392397372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1545,7 +1609,7 @@ GameObject:
   - component: {fileID: 727584353}
   m_Layer: 0
   m_Name: PilarPositions
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1620,7 +1684,7 @@ GameObject:
   - component: {fileID: 822821592}
   m_Layer: 0
   m_Name: Positions
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1757,6 +1821,98 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1041702329
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1041702330}
+  - component: {fileID: 1041702331}
+  - component: {fileID: 1041702332}
+  m_Layer: 0
+  m_Name: MuertePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1041702330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041702329}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 47334558}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1041702331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041702329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9000a4c6753abf844a83ee4f5fca68ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossEnemy: {fileID: 47334563}
+  bossAnimator: {fileID: 2101374894}
+--- !u!61 &1041702332
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041702329}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.041546345, y: -0.115406126}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.7691879, y: 1.526252}
+  m_EdgeRadius: 0
 --- !u!1 &1046235018
 GameObject:
   m_ObjectHideFlags: 0
@@ -1768,7 +1924,7 @@ GameObject:
   - component: {fileID: 1046235019}
   m_Layer: 0
   m_Name: Position (2)
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1920,7 +2076,7 @@ GameObject:
   - component: {fileID: 1111953873}
   m_Layer: 0
   m_Name: 'NormalAttack '
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2835,7 +2991,7 @@ GameObject:
   - component: {fileID: 1553838448}
   m_Layer: 0
   m_Name: Positions
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3103,7 +3259,7 @@ GameObject:
   - component: {fileID: 1612925043}
   m_Layer: 0
   m_Name: Position (3)
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3326,7 +3482,7 @@ GameObject:
   - component: {fileID: 1687470107}
   m_Layer: 0
   m_Name: SpecialAttack
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3553,7 +3709,7 @@ GameObject:
   - component: {fileID: 1954105108}
   m_Layer: 0
   m_Name: ColumnaPositions
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3649,7 +3805,7 @@ GameObject:
   - component: {fileID: 2101374894}
   m_Layer: 0
   m_Name: Muerte
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
