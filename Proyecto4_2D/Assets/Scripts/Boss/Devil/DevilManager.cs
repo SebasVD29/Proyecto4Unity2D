@@ -13,39 +13,38 @@ public enum DevilState
 }
 public class DevilManager : MonoBehaviour
 {
+    [Header("Times")]
     public float timeStateToChange;
     public float timeToSpecialAttack = 0.4f;
+    public float timeToNormalAttack;
 
+    [Header("Estados")]
     public DevilState state;
 
+    [Header("Componentes")]
     private Animator animatorDevil;
     private Rigidbody2D bossRB;
 
-
     [Header("Movement")]
     public float moveSpeed;
-    public float moveSpeedAttack;
     public bool mirarIzquierda = true;
+    public Transform[] positionsTP;
     private Vector2 moveDirection;
 
-    public Transform[] positionsTP;
+    [Header("General Attacks")]
+    [SerializeField] private GameObject player;
+
+    [Header("Normal Attack")]
+    [SerializeField] private GameObject NormalAttackGO;
+    public float moveSpeedAttack;
     public Transform normalAttackPosition;
+
+    [Header("Special Attack")]
+    [SerializeField] private GameObject SpecialAttack;
     public Transform specialAttackPosition;
 
-
-
-    [SerializeField] private GameObject player;
-    [SerializeField] private GameObject NormalAttackGO;
-    [SerializeField] private GameObject SpecialAttack;
+    [Header("Spell Attack")]
     [SerializeField] private GameObject SpellAttack;
-
-    public float distanciaDeAtaque;
-    private float distanciaCalculadaDeAtaque;
-
-    private bool triggerNAttack = false;
-    //public float radioDeAttack;
-   // public float dañoDeAttack;
-
 
     // Start is called before the first frame update
     void Start()
@@ -66,7 +65,7 @@ public class DevilManager : MonoBehaviour
     IEnumerator DevilStateChange()
     {
         //int randomState = Random.Range(1, 5);
-        int randomState = 3;
+        int randomState = 2;
         yield return new WaitForSeconds(timeStateToChange);
         switch (randomState)
         {
@@ -104,8 +103,7 @@ public class DevilManager : MonoBehaviour
             case DevilState.NormalAttack:
                 animatorDevil.SetBool("Idel", false);
                 StartCoroutine(DevilStateChange());
-                StartCoroutine(NormalAttack());
-               
+                StartCoroutine(NormalAttackMetodo());
                 break;
             case DevilState.SpecialAttack:
                 animatorDevil.SetBool("Idel", false);
@@ -123,10 +121,18 @@ public class DevilManager : MonoBehaviour
         animatorDevil.SetTrigger("Tp");
         yield return new WaitForSeconds(0.8f);
         transform.position = positionsTP[randomPosition].position;
+        yield return new WaitForSeconds(0.2f);
+        animatorDevil.SetTrigger("Cast");
+        yield return new WaitForSeconds(0.6f);
+        GameObject spell = Instantiate(SpellAttack, transform.position, Quaternion.identity);
+        spell.transform.position = new Vector2(player.transform.position.x, -0.3f);
+        yield return new WaitForSeconds(0.8f);
+        spell.GetComponent<Animator>().SetTrigger("SpellAttack");
         //yield return new WaitForSeconds(1f);
+
     }
-   
-    IEnumerator NormalAttack()
+
+    IEnumerator NormalAttackMetodo()
     {
         int randomPosition = Random.Range(0, 2);
         animatorDevil.SetTrigger("Tp");
@@ -135,13 +141,18 @@ public class DevilManager : MonoBehaviour
         
         yield return new WaitForSeconds(0.3f);
         animatorDevil.SetTrigger("Walking");
-        bossRB.velocity = new Vector2(moveDirection.x, moveDirection.y);
-        triggerNAttack = NormalAttackGO.GetComponent<NormalAttack>().triggerNormalAttack;
-        if (triggerNAttack == true)
-        {
-            animatorDevil.SetTrigger("NAttack");
+        bossRB.velocity = new Vector2(moveDirection.x, bossRB.velocity.y);
 
-        }
+        // = NormalAttack.triggerNormalAttack;
+
+        yield return new WaitForSeconds(timeToNormalAttack);
+        animatorDevil.SetTrigger("NAttack");
+
+        //if (triggerNAttack)
+        //{
+        //    NormalAttack.triggerNormalAttack = false;
+        //}
+        //triggerNAttack = false;
     }
     IEnumerator SpecialAttck()
     {
