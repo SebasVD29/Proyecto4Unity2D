@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - Salud
   - Enemigo
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

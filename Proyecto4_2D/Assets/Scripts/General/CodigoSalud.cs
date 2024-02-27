@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class CodigoSalud : MonoBehaviour
 {
+
+
     public float Salud = 100;
     public float SaludMaxima = 100;
 
@@ -15,7 +17,7 @@ public class CodigoSalud : MonoBehaviour
     public Text TextoSalud;
 
     
-
+   
     public void Update()
     {
         ActualizarInterfaz();
@@ -51,7 +53,7 @@ public class CodigoSalud : MonoBehaviour
       if (Salud==0)
         {
 
-        gameObject.GetComponent<PlayerRespawn>().PlayerDameged();
+        gameObject.GetComponent<PlayerRespawn>().PlayerDeath();
 
 
         }

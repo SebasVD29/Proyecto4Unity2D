@@ -8,13 +8,14 @@ public class HacerDano : MonoBehaviour
 {
     public float CantidadDano;
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             Debug.Log("Player Dano");
             collision.GetComponent<CodigoSalud>().RecibirDano(CantidadDano);
-           
+            collision.GetComponent<PlayerRespawn>().PlayerDameged();
         }
     }
 

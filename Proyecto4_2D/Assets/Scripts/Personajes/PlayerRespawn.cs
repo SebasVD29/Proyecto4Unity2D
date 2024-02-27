@@ -23,12 +23,19 @@ public class PlayerRespawn : MonoBehaviour
         PlayerPrefs.SetFloat("checkPointX", x);
         PlayerPrefs.SetFloat("checkPointY", y);
     }
-      public void PlayerDameged()
+      public void PlayerDeath()
     {
-        animator.Play("Hit");
+        animator.Play("Death");
         Invoke("LoadLevel", 1);
     }
 
+    public void PlayerDameged()
+    {
+
+        animator.Play("Hurt");
+        //Invoke("LoadLevel", 1);
+
+    }
 
     void LoadLevel()
     {
