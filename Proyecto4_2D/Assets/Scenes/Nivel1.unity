@@ -507,7 +507,7 @@ GameObject:
   - component: {fileID: 211712080}
   m_Layer: 0
   m_Name: house-c
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -588,7 +588,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 211712077}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 62fbb81d0a065204e960f0e50e55c3dc, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1022,7 +1022,7 @@ GameObject:
   - component: {fileID: 471741893}
   m_Layer: 0
   m_Name: top-wood (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1247,7 +1247,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.02, y: 0.14, z: -10}
+  m_LocalPosition: {x: 25.02, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1265,6 +1265,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67635b454081e7b46b309d67b1332ae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  limiteXIzquierdo: 5
+  limiteXDerecho: 25
+  limiteYArrbia: 3
+  limiteYAbajo: 0
   Player: {fileID: 1865111632}
 --- !u!1 &526343125
 GameObject:
@@ -1278,7 +1282,7 @@ GameObject:
   - component: {fileID: 526343127}
   m_Layer: 0
   m_Name: top-right-wood
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2126,7 +2130,7 @@ GameObject:
   - component: {fileID: 913102386}
   m_Layer: 0
   m_Name: top-left-wood
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3539,7 +3543,7 @@ GameObject:
   - component: {fileID: 1452110002}
   m_Layer: 0
   m_Name: top-wood
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3951,7 +3955,7 @@ GameObject:
   - component: {fileID: 1530807452}
   m_Layer: 0
   m_Name: top-wood (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4035,7 +4039,7 @@ GameObject:
   - component: {fileID: 1538346261}
   m_Layer: 0
   m_Name: Wood
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4075,7 +4079,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1538346259}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 62fbb81d0a065204e960f0e50e55c3dc, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -4650,7 +4654,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 12.35385, y: 3.2054892}
+  m_Offset: {x: 12.35385, y: 3.243715}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4661,7 +4665,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 31.10042, y: 0.2526636}
+  m_Size: {x: 31.10042, y: 0.3291154}
   m_EdgeRadius: 0
 --- !u!1839735485 &1593142163
 Tilemap:
@@ -6070,7 +6074,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4657508286122191708, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.3028
+      value: 29.74
       objectReference: {fileID: 0}
     - target: {fileID: 4657508286122191708, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6111,6 +6115,10 @@ PrefabInstance:
     - target: {fileID: 4707928089756324099, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
       propertyPath: jumpSpeed
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707928089756324099, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
+      propertyPath: betterJump
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4707928089756324099, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
       propertyPath: doubleJumpSpeed

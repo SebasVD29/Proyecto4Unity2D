@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 165369461}
   m_Layer: 0
   m_Name: Arcangel
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -591,6 +591,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossHealthPanel: {fileID: 1708058774}
   bossBackgroundAnimator: {fileID: 1028063577}
+  boss: {fileID: 1270469099}
+  bossHealth: 10
+  currentBossHealth: 0
+  bossHealthBar: {fileID: 578763492}
+  bossName: {fileID: 1570223974}
 --- !u!1001 &259138496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -662,9 +667,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 266565679}
+  - component: {fileID: 266565681}
+  - component: {fileID: 266565680}
   m_Layer: 0
   m_Name: Devil
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -686,6 +693,35 @@ Transform:
   - {fileID: 1553838448}
   m_Father: {fileID: 1270469100}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &266565680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266565678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9000a4c6753abf844a83ee4f5fca68ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossEnemy: {fileID: 0}
+  Arcangel: {fileID: 0}
+--- !u!114 &266565681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266565678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d112e1c750c20f4b827ab041a277a34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossName: Yelig-nar
+  bossHealth: 10
+  bossDamage: 10
 --- !u!1001 &317447539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -886,6 +922,8 @@ GameObject:
   - component: {fileID: 392397368}
   - component: {fileID: 392397369}
   - component: {fileID: 392397370}
+  - component: {fileID: 392397372}
+  - component: {fileID: 392397371}
   m_Layer: 0
   m_Name: Angel
   m_TagString: Boss
@@ -1087,6 +1125,35 @@ MonoBehaviour:
   - {fileID: 1295195511}
   - {fileID: 1182804727}
   - {fileID: 119798913}
+--- !u!114 &392397371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392397363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9000a4c6753abf844a83ee4f5fca68ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossEnemy: {fileID: 0}
+  Arcangel: {fileID: 165369460}
+--- !u!114 &392397372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392397363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d112e1c750c20f4b827ab041a277a34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossName: Remina
+  bossHealth: 10
+  bossDamage: 0
 --- !u!4 &421829913 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 603279508882003952, guid: c46184cf7ea7e6c4eb084fec1d8d81b7, type: 3}
@@ -2244,7 +2311,7 @@ GameObject:
   - component: {fileID: 1270469100}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2857,7 +2924,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Arc\xE1ngel"
+  m_Text: 
 --- !u!222 &1570223975
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3556,64 +3623,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4707928089756324099, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: tr
-      value: 
-      objectReference: {fileID: 1980175691}
-    - target: {fileID: 4707928089756324099, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: runSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4707928089756324099, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: jumpSpeed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4707928089756324099, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: betterJump
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4707928089756324099, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: doubleJumpSpeed
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 5817479114769522446, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
       propertyPath: m_Name
       value: player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6041233896071370783, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: m_Size.y
-      value: 0.10964477
-      objectReference: {fileID: 0}
-    - target: {fileID: 6041233896071370783, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: m_Offset.y
-      value: -2.0183916
-      objectReference: {fileID: 0}
-    - target: {fileID: 6041233896071370783, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7607192569663012109, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: m_Size.y
-      value: 0.9255664
-      objectReference: {fileID: 0}
-    - target: {fileID: 7607192569663012109, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.08849451
-      objectReference: {fileID: 0}
-    - target: {fileID: 7607192569663012109, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
---- !u!96 &1980175691 stripped
-TrailRenderer:
-  m_CorrespondingSourceObject: {fileID: 6884482312253998075, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-  m_PrefabInstance: {fileID: 1980175690}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2101374892
 GameObject:
   m_ObjectHideFlags: 0
