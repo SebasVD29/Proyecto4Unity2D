@@ -16,6 +16,8 @@ public class CodigoSalud : MonoBehaviour
     public Image BarraSalud;
     public Text TextoSalud;
 
+    public Animator animator;
+
     
    
     public void Update()
@@ -34,7 +36,9 @@ public class CodigoSalud : MonoBehaviour
         }
 
     }
-    public void RecibirDano(float dano)
+
+    public void  RecibirDano(float dano)
+     
     {
 
         Salud -= dano;
@@ -45,18 +49,19 @@ public class CodigoSalud : MonoBehaviour
             Salud = 0;
             UnityEngine.Debug.Log("El jugador ha perdido toda la salud.");
            // Destroy(gameObject);
-           
+           animator.SetTrigger("Death");
         }
         UnityEngine.Debug.Log("El jugador ha recibido " + dano + " puntos de daño. Salud actual: " + Salud);
+
     
-    
-      if (Salud==0)
+      /*if (Salud==0)
         {
 
         gameObject.GetComponent<PlayerRespawn>().PlayerDeath();
 
 
         }
+        */
     
     }
 

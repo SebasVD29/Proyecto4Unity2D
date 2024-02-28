@@ -3255,7 +3255,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -6115,6 +6115,12 @@ MonoBehaviour:
   SaludMaxima: 100
   BarraSalud: {fileID: 812065127}
   TextoSalud: {fileID: 936439071}
+  animator: {fileID: 1865111654}
+--- !u!95 &1865111654 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -1960058396569712537, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
+  m_PrefabInstance: {fileID: 8895989436178010}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1894751704
 GameObject:
   m_ObjectHideFlags: 0
@@ -7160,11 +7166,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4657508286122191708, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.51
+      value: 25.83
       objectReference: {fileID: 0}
     - target: {fileID: 4657508286122191708, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.04
+      value: -0.97
       objectReference: {fileID: 0}
     - target: {fileID: 4657508286122191708, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
       propertyPath: m_LocalPosition.z
