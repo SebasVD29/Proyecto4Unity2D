@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 3252423079871527425}
   m_Layer: 0
   m_Name: tileset-sliced_81
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -516,7 +516,7 @@ GameObject:
   - component: {fileID: 5710462689650852906}
   m_Layer: 0
   m_Name: tileset-sliced_71
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -683,7 +683,7 @@ GameObject:
   - component: {fileID: 1988047981374029416}
   m_Layer: 0
   m_Name: PilarCementario
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -727,7 +727,7 @@ GameObject:
   - component: {fileID: 1655011613299065818}
   m_Layer: 0
   m_Name: tileset-sliced_72
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -811,7 +811,7 @@ GameObject:
   - component: {fileID: 4261238375749660539}
   m_Layer: 0
   m_Name: tileset-sliced_82
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
