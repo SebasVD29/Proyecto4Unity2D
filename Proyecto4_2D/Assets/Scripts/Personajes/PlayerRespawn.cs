@@ -33,11 +33,11 @@ public class PlayerRespawn : MonoBehaviour
         PlayerPrefs.SetFloat("checkPointX", x);
         PlayerPrefs.SetFloat("checkPointY", y);
     }
-      /*public void PlayerDeath()
+      public void PlayerDeath()
     {
-        animator.Play("Death");
-     //  Invoke("LoadLevel", 1);
-    }*/
+     // animator.Play("Death");
+       Invoke("LoadLevel", 1);
+    }
     public void PlayerDameged()
     {
 

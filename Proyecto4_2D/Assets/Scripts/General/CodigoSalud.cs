@@ -50,18 +50,19 @@ public class CodigoSalud : MonoBehaviour
             UnityEngine.Debug.Log("El jugador ha perdido toda la salud.");
            // Destroy(gameObject);
            animator.SetTrigger("Death");
+           //Invoke("LoadLevel", 1);
         }
         UnityEngine.Debug.Log("El jugador ha recibido " + dano + " puntos de daño. Salud actual: " + Salud);
 
     
-      /*if (Salud==0)
+      if (Salud==0)
         {
 
         gameObject.GetComponent<PlayerRespawn>().PlayerDeath();
 
 
         }
-        */
+        
     
     }
 
