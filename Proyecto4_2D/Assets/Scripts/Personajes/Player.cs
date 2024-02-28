@@ -126,7 +126,7 @@ public class Player : MonoBehaviour
              }
         
          }
-
+       
         
         //Upgraded Jump
         if (betterJump)
@@ -175,7 +175,7 @@ public class Player : MonoBehaviour
             animator.SetBool("Fall", false);
         }
 
-
+        Attack();
     }
 
     private void FixedUpdate()
@@ -187,7 +187,18 @@ public class Player : MonoBehaviour
         }
         rb.velocity = new Vector2(horizontal *  runSpeed, rb.velocity.y);
     }
-
+    public void Attack()
+    { 
+     if(Input.GetButtonDown("Fire1"))
+        {
+            animator.SetBool("Attack", true);
+            
+        }
+        else 
+        {
+            animator.SetBool("Attack", false);
+        }
+    }
     private void Move()
     {
 
