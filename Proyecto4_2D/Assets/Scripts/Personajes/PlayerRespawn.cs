@@ -14,11 +14,27 @@ public class PlayerRespawn : MonoBehaviour
         animator = GetComponent<Animator>();
         //Obtiene el nivel actual 
         string actualLevel = SceneManager.GetActiveScene().name;
-        
+        //Obtien las variables del checkpoint 
+        string level = PlayerPrefs.GetString("checkPointLevel");
+        float x = PlayerPrefs.GetFloat("checkPointX");
+        float y = PlayerPrefs.GetFloat("checkPointY");
+        //Valida si el nivel actual es el mismo del ultimo checkpoint 
+        if (actualLevel == level)
+        {
+            transform.position = new Vector2(x, y);
+        }
     }
+
+    public void ReachedCheckkPoint(string level, float x, float y)
+    {
+        PlayerPrefs.SetString("checkPointLevel", level);
+        PlayerPrefs.SetFloat("checkPointX", x);
+        PlayerPrefs.SetFloat("checkPointY", y);
+    }
+
     public void PlayerDameged()
     {
-        animator.Play("Hit");
+        animator.Play("Idle");
         Invoke("LoadLevel", 1);
     }
 
