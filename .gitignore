@@ -7,7 +7,7 @@
 /[Oo]bj/
 /[Bb]uild/
 /[Bb]uilds/
-/[Ll]ogs/
+[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 
 # MemoryCaptures can get excessive in size.
@@ -72,7 +72,3 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 /Proyecto4_2D/Temp
 /Proyecto4_2D/Logs/shadercompiler-UnityShaderCompiler.exe0.log
-/Proyecto4_2D/Logs/AssetImportWorker0.log
-/Proyecto4_2D/Logs/AssetImportWorker1.log
-/Proyecto4_2D/Logs/shadercompiler-AssetImportWorker0.log
-/Proyecto4_2D/Temp/UnityLockfile

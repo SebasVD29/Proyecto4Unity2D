@@ -47,8 +47,6 @@ public class Player : MonoBehaviour
     public float fallMultiplier = 0.5f;
     public float lowJumpMultiplier = 1f;
 
-    public bool death=false;
-
     SpriteRenderer sprite;
 
     Animator animator;

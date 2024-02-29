@@ -5,50 +5,37 @@ using UnityEngine.SceneManagement;
 
 public class PlayerRespawn : MonoBehaviour
 {
-  
     Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
-        //ASIGNA EL ANIMATOR AL INICIAR EL NIVEL
+        //Asigna el animator al iniciar el nivel 
         animator = GetComponent<Animator>();
-
-        //OBTIENE EL NIVEL ACTUAL
+        //Obtiene el nivel actual 
         string actualLevel = SceneManager.GetActiveScene().name;
-        //OBTIENE LAS VARIABLES DEL CHECK POINT
+        //Obtien las variables del checkpoint 
         string level = PlayerPrefs.GetString("checkPointLevel");
         float x = PlayerPrefs.GetFloat("checkPointX");
         float y = PlayerPrefs.GetFloat("checkPointY");
-        //VALIDA SI EL NIVEL ACTUAL ES EL MISMO DEL ULTIMO CHECK POINT
+        //Valida si el nivel actual es el mismo del ultimo checkpoint 
         if (actualLevel == level)
         {
             transform.position = new Vector2(x, y);
         }
-        
     }
-     public void ReachedCheckPoint(string level, float x, float y)
+
+    public void ReachedCheckkPoint(string level, float x, float y)
     {
         PlayerPrefs.SetString("checkPointLevel", level);
         PlayerPrefs.SetFloat("checkPointX", x);
         PlayerPrefs.SetFloat("checkPointY", y);
     }
-      public void PlayerDeath()
-    {
-     // animator.Play("Death");
-       Invoke("LoadLevel", 1);
-    }
+
     public void PlayerDameged()
     {
-
-        animator.SetTrigger("Hurt");
-        //Invoke("LoadLevel", 1);
-
-    }
-
-    void LoadLevel()
-    {
+        animator.Play("Idle");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+      
     }
 }
-
