@@ -64,7 +64,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.057057858, y: -0.010700317}
+  m_Offset: {x: 0.51, y: -0.010700317}
   serializedVersion: 2
   m_Radius: 0.3033238
 --- !u!1 &5817479114769522446
@@ -83,6 +83,7 @@ GameObject:
   - component: {fileID: -1960058396569712537}
   - component: {fileID: 7607192569663012109}
   - component: {fileID: 6884482312253998075}
+  - component: {fileID: 2006608344720700888}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -402,6 +403,18 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &2006608344720700888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5817479114769522446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 893222071637bf84fb327889703a84aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8028931333334228754
 GameObject:
   m_ObjectHideFlags: 0
