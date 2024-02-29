@@ -5,36 +5,35 @@ using UnityEngine;
 public class BossHealth : MonoBehaviour
 {
     [SerializeField] BossEnemy bossEnemy;
-    [SerializeField] GameObject Arcangel;
+   // [SerializeField] GameObject boss;
+    [SerializeField] Animator bossAnimator;
+
 
     private void Start()
     {
-        bossEnemy = GetComponent<BossEnemy>();
+        //bossEnemy = GetComponent<BossEnemy>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("PlayerAttack"))
         {
-            bossEnemy.bossHealth -= /*Player.Damage*/ 5f ;
-            Debug.Log("DañoBoss");
-            if (bossEnemy.bossHealth <= 0)
-            {
-                Destroy(Arcangel);
-            }
+            bossEnemy.bossHealth -= /*Player.Damage*/ 2f;
+            StartCoroutine(HitDeathAnimation());
+
         }
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.transform.CompareTag("PlayerAttack"))
-    //    {
-    //        bossEnemy.bossHealth -= /*Player.Damage*/ 5f;
 
-    //        if (bossEnemy.bossHealth <= 0)
-    //        {
-    //            Destroy(gameObject);
-    //        }
-    //    }
+    IEnumerator HitDeathAnimation()
+    {
+       
+        bossAnimator.SetTrigger("Hit");
+        yield return new WaitForSeconds(0.5f);
+        if (bossEnemy.bossHealth <= 0)
+        {
+            bossAnimator.SetTrigger("Death");
+            yield return new WaitForSeconds(1.5f);
+        }
+    }
 
-    //}
 }
