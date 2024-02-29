@@ -1179,7 +1179,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -2606
+  m_LastSelectedObjectID: 25308
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1273,6 +1273,7 @@ MonoBehaviour:
     m_SearchArea: 1
     m_Folders:
     - Assets/Scripts/Enemigos
+    - Assets/Scripts/Boss/General
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1281,6 +1282,7 @@ MonoBehaviour:
   m_StartGridSize: 81
   m_LastFolders:
   - Assets/Scripts/Enemigos
+  - Assets/Scripts/Boss/General
   m_LastFoldersGridSize: 81
   m_LastProjectPath: C:\Users\Sebastian Vargas\Documents\GitHub\Proyecto4Unity2D\Proyecto4_2D
   m_LockTracker:
