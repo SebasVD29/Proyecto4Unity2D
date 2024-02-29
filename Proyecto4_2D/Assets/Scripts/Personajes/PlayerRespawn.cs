@@ -35,11 +35,7 @@ public class PlayerRespawn : MonoBehaviour
     public void PlayerDameged()
     {
         animator.Play("Idle");
-        Invoke("LoadLevel", 1);
-    }
-
-    void LoadLevel()
-    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+      
     }
 }
