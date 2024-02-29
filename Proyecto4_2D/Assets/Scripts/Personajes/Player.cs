@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
+    private TrailRenderer _trailRenderer;
+
     public static Player instance;
 
     private void Awake()
@@ -24,15 +26,16 @@ public class Player : MonoBehaviour
     public float jumpSpeed = 3;
     public float doubleJumpSpeed = 2.5f;
     //private bool canDoubleJump;
-    
 
-    //Dash
-    private bool canDash = true;
-    private bool isDashing;
-    private float dashingPower;
-    private float dashingTime;
-    private float dashingCoolDown;
-    [SerializeField] private TrailRenderer tr;
+
+    //Prueba Dash 
+    [Header("Dashing")]
+    [SerializeField] private float _dashingVelocity = 14f;
+    [SerializeField] private float _dashingTime = 0.5f;
+    [SerializeField] private bool _active = true;
+    private Vector2 _dashingDir;
+    private bool _isDashing;
+    private bool _canDash = true;
 
 
 
@@ -57,19 +60,53 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-     
+        _trailRenderer = GetComponent<TrailRenderer>();
+
     }
 
     void Update()
     {
 
-        if(isDashing)
-        {
-            return;
-        }
-         horizontal = Input.GetAxisRaw("Horizontal");
+       
 
-        if (Input.GetKey("d") || Input.GetKey("right"))
+
+            //Prueba Dash
+            if (!_active)
+                return;
+
+            var inputX = Input.GetAxisRaw("Horizontal");
+            var dashInput = Input.GetButton("Dash");
+
+            if (dashInput && _canDash)
+            {
+                _isDashing = true;
+                _canDash = true;
+                _trailRenderer.emitting = true;
+                _dashingDir = new Vector2(inputX, y: Input.GetAxisRaw("Vertical"));
+                if (_dashingDir == Vector2.zero)
+                {
+                    _dashingDir = new Vector2(transform.localScale.x, y: 0);
+                }
+
+                StartCoroutine(StopDashing());
+
+            }
+
+            animator.SetBool("Dash", _isDashing);
+
+            if (_isDashing)
+            {
+                rb.velocity = _dashingDir.normalized * _dashingVelocity;
+            }
+
+            if (IsGrounded.isGrounded)
+            {
+                _canDash = true;
+            }
+
+            //
+
+            if (Input.GetKey("d") || Input.GetKey("right"))
         {
             //El personaje se mueve hacia la derecha 
             rb.velocity = new Vector2(runSpeed, rb.velocity.y);
@@ -144,12 +181,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        //El personaje se desliza
-        if (Input.GetKeyDown(KeyCode.W) && canDash)
-        {
-            StartCoroutine(Dash());
-
-        }
+       
 
         //Flip();
 
@@ -207,25 +239,17 @@ public class Player : MonoBehaviour
 
 
 
-    private IEnumerator Dash()
+    private IEnumerator StopDashing()
     {
-        canDash = false;
-        isDashing = true;
-        float originalGravity = rb.gravityScale;
-        rb.gravityScale = 0f;
-        rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
-        tr.emitting = true;
-        yield return new WaitForSeconds(dashingTime);
-        tr.emitting = false;
-        rb.gravityScale = originalGravity;
-        isDashing = false;
-        yield return new WaitForSeconds(dashingCoolDown);
-        canDash = true;
+        yield return new WaitForSeconds(_dashingTime);
+        _trailRenderer.emitting = false;
+        _isDashing = false;
+
 
 
     }
 
- 
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.tag == "Ground")
