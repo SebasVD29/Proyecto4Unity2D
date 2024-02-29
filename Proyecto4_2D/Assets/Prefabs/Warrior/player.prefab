@@ -201,12 +201,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidadDeMovimiento: 0
   runSpeed: 4
-  jumpSpeed: 8
-  doubleJumpSpeed: 10
-  tr: {fileID: 6884482312253998075}
+  jumpSpeed: 6
+  doubleJumpSpeed: 6
+  _dashingVelocity: 14
+  _dashingTime: 0.5
+  _active: 1
   betterJump: 1
   fallMultiplier: 0.5
   lowJumpMultiplier: 1
+  attackWeapon: {fileID: 4926953166233551844}
+  groundGO: {fileID: 8028931333334228754}
+  playerCollider2D: {fileID: 0}
 --- !u!114 &8875801317981615738
 MonoBehaviour:
   m_ObjectHideFlags: 0

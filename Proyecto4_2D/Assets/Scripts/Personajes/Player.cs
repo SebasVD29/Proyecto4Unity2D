@@ -208,13 +208,10 @@ public class Player : MonoBehaviour
     { 
         if(Input.GetButtonDown("Fire1"))
         {
-            animator.SetBool("Attack", true);
+            animator.SetTrigger("Attack");
             
         }
-        else 
-        {
-            animator.SetBool("Attack", false);
-        }
+       
     }
 
     private IEnumerator StopDashing()
