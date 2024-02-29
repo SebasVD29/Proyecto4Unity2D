@@ -53,29 +53,30 @@ public class Player : MonoBehaviour
     SpriteRenderer sprite;
 
     Animator animator;
+    [SerializeField] GameObject attackWeapon;
+    [SerializeField] GameObject groundGO;
+    [SerializeField] Collider2D playerCollider2D;
 
- 
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         _trailRenderer = GetComponent<TrailRenderer>();
+        playerCollider2D = GetComponent<Collider2D>();
 
     }
 
     void Update()
     {
 
-       
-
-
             //Prueba Dash
             if (!_active)
                 return;
 
             var inputX = Input.GetAxisRaw("Horizontal");
-            var dashInput = Input.GetButton("Dash");
+            var dashInput = Input.GetButtonDown("Dash");
 
             if (dashInput && _canDash)
             {
@@ -92,10 +93,10 @@ public class Player : MonoBehaviour
 
             }
 
-            animator.SetBool("Dash", _isDashing);
 
             if (_isDashing)
             {
+                animator.SetTrigger("Dash");
                 rb.velocity = _dashingDir.normalized * _dashingVelocity;
             }
 
@@ -106,12 +107,16 @@ public class Player : MonoBehaviour
 
             //
 
-            if (Input.GetKey("d") || Input.GetKey("right"))
+        if (Input.GetKey("d") || Input.GetKey("right"))
         {
             //El personaje se mueve hacia la derecha 
             rb.velocity = new Vector2(runSpeed, rb.velocity.y);
             //El personaje cambia la direccion hacia la derecha 
             sprite.flipX = false;
+            sprite.flipX = false;
+            playerCollider2D.offset = new Vector2(-0.24f, -0.1201479f);
+            attackWeapon.GetComponent<Collider2D>().offset = new Vector2(0.5f, -0.01070032f);
+            groundGO.GetComponent<Collider2D>().offset = new Vector2(4.535462f, -2.048894f);
             //Se invoca el arbol de animacion
             animator.SetFloat("Run", runSpeed);
         }
@@ -121,6 +126,9 @@ public class Player : MonoBehaviour
             rb.velocity = new Vector2(-runSpeed, rb.velocity.y);
             //El personaje cambia la direccion hacia la izquierda
             sprite.flipX = true;
+            playerCollider2D.offset = new Vector2(0.24f, -0.1201479f);
+            attackWeapon.GetComponent<Collider2D>().offset = new Vector2(-0.5f, -0.01070032f);
+            groundGO.GetComponent<Collider2D>().offset = new Vector2(5.2f, -2.048894f);
             //Se invoca el arbol de animacion 
             animator.SetFloat("Run", runSpeed);
         }
@@ -132,15 +140,6 @@ public class Player : MonoBehaviour
             animator.SetFloat("Run", 0);
 
         }
-
-        //prueba
-
-        /*if (Input.GetKeyDown("space") && canJump)
-        {
-            canJump = false;
-            animator.SetBool("jump", true);
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 200f));
-        }*/
 
         //El personaje salta
          if (Input.GetKeyDown("space"))
@@ -181,17 +180,13 @@ public class Player : MonoBehaviour
             }
         }
 
-       
-
-        //Flip();
-
         if (IsGrounded.isGrounded)
         {
             //Para invocar al arbol de animacion
             animator.SetBool("Jump", false);
             animator.SetBool("DoubleJump", false);
             animator.SetBool("Fall", false);
-            animator.SetBool("Dash", false);
+            //animator.SetBool("Dash", false);
         }
         else
         {
@@ -209,19 +204,9 @@ public class Player : MonoBehaviour
 
         Attack();
     }
-
-   /* private void FixedUpdate()
-    {
-        if(isDashing)
-        {
-            //return;
-            Move();
-        }
-        rb.velocity = new Vector2(horizontal *  runSpeed, rb.velocity.y);
-    }*/
     public void Attack()
     { 
-     if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Fire1"))
         {
             animator.SetBool("Attack", true);
             
@@ -231,22 +216,13 @@ public class Player : MonoBehaviour
             animator.SetBool("Attack", false);
         }
     }
-    private void Move()
-    {
-
-        rb.velocity = new Vector2(horizontal * runSpeed, rb.velocity.y);
-    }
-
-
 
     private IEnumerator StopDashing()
     {
         yield return new WaitForSeconds(_dashingTime);
         _trailRenderer.emitting = false;
         _isDashing = false;
-
-
-
+        _canDash = false;
     }
 
 
