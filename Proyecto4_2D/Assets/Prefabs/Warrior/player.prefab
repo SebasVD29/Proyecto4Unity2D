@@ -199,15 +199,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadDeMovimiento: 0
-  runSpeed: 2
-  jumpSpeed: 6
-  doubleJumpSpeed: 6
+  runSpeed: 4
+  jumpSpeed: 8
+  doubleJumpSpeed: 10
   _dashingVelocity: 14
   _dashingTime: 0.5
   _active: 1
   betterJump: 1
   fallMultiplier: 0.5
   lowJumpMultiplier: 1
+  attackWeapon: {fileID: 4926953166233551844}
+  groundGO: {fileID: 8028931333334228754}
+  playerCollider2D: {fileID: 0}
 --- !u!114 &8875801317981615738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,7 +276,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.25056934, y: -0.12014794}
+  m_Offset: {x: -0.24, y: -0.12014794}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}

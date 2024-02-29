@@ -59,6 +59,10 @@ public class Player : MonoBehaviour
 
     Animator animator;
 
+    [SerializeField] GameObject attackWeapon;
+    [SerializeField] GameObject groundGO;
+    [SerializeField] Collider2D playerCollider2D;
+
  
     void Start()
     {
@@ -66,13 +70,13 @@ public class Player : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         _trailRenderer = GetComponent<TrailRenderer>();
-     
+        playerCollider2D = GetComponent<Collider2D>();
+
+
     }
 
     void Update()
     {
-
-
         //Prueba Dash
         if (!_active)
             return;
@@ -115,6 +119,10 @@ public class Player : MonoBehaviour
             rb.velocity = new Vector2(runSpeed, rb.velocity.y);
             //El personaje cambia la direccion hacia la derecha 
             sprite.flipX = false;
+            playerCollider2D.offset = new Vector2(-0.24f, -0.1201479f);
+            attackWeapon.GetComponent<Collider2D>().offset = new Vector2(0.5f, -0.01070032f);
+            groundGO.GetComponent<Collider2D>().offset = new Vector2(4.535462f, -2.048894f);
+            //transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + 360, 0);
             //Se invoca el arbol de animacion
             animator.SetFloat("Run", runSpeed);
         }
@@ -124,6 +132,10 @@ public class Player : MonoBehaviour
             rb.velocity = new Vector2(-runSpeed, rb.velocity.y);
             //El personaje cambia la direccion hacia la izquierda
             sprite.flipX = true;
+            playerCollider2D.offset = new Vector2(0.24f, -0.1201479f);
+            attackWeapon.GetComponent<Collider2D>().offset = new Vector2(-0.5f, -0.01070032f);
+            groundGO.GetComponent<Collider2D>().offset = new Vector2(5.2f, -2.048894f);
+            //transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + 180, 0);
             //Se invoca el arbol de animacion 
             animator.SetFloat("Run", runSpeed);
         }
@@ -218,8 +230,6 @@ public class Player : MonoBehaviour
         _trailRenderer.emitting = false;
         _isDashing = false;
         
-
-
     }
 
  
