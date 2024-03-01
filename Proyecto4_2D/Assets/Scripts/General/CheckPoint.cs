@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CheckPoint : MonoBehaviour
 {
+    [SerializeField] GameObject checkPointFire;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -13,9 +14,9 @@ public class CheckPoint : MonoBehaviour
             string level = SceneManager.GetActiveScene().name;
             float x = collision.transform.position.x;
             float y = collision.transform.position.y;
-            collision.GetComponent<PlayerRespawn>().ReachedCheckPoint(level, x, y);
+            collision.GetComponent<PlayerRespawn>().ReachedCheckkPoint(level, x, y);
             //APLICA LA ANIMACION DEL CHECK POINT
-            GetComponent<Animator>().Play("FlagOut");
+            checkPointFire.SetActive(true);
         }
     }
 }

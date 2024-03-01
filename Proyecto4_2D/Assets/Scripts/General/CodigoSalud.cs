@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,8 +17,7 @@ public class CodigoSalud : MonoBehaviour
 
     public Animator animator;
 
-    
-   
+
     public void Update()
     {
         ActualizarInterfaz();
@@ -37,39 +35,25 @@ public class CodigoSalud : MonoBehaviour
 
     }
 
-    public void  RecibirDano(float dano)
-     
+    public void RecibirDano(float dano)
     {
 
         Salud -= dano;
-        UnityEngine.Debug.Log("Health reduced by: " + dano + ". Current Health: " + Salud);
-
-        if (Salud <= 0)
+      
+    
+        if (Salud<=0)
         {
             Salud = 0;
-            UnityEngine.Debug.Log("El jugador ha perdido toda la salud.");
-           // Destroy(gameObject);
-           animator.SetTrigger("Death");
-           //Invoke("LoadLevel", 1);
-        }
-        UnityEngine.Debug.Log("El jugador ha recibido " + dano + " puntos de daño. Salud actual: " + Salud);
-
-    
-      if (Salud==0)
-        {
-
-        gameObject.GetComponent<PlayerRespawn>().PlayerDeath();
-
+            gameObject.GetComponent<PlayerRespawn>().PlayerDeath();
 
         }
         
-    
     }
 
     public void ActualizarInterfaz()
     {
         BarraSalud.fillAmount = Salud / SaludMaxima;
-        TextoSalud.text = "Salud: " + Salud.ToString("f0");
+        //TextoSalud.text = "Salud: " + Salud.ToString("f0");
     }
 
 

@@ -16,15 +16,5 @@ public class Daño : MonoBehaviour
         }
     }
     
-    /*
-    public void PlayerDameged()
-    {
-        animator.Play("Hit");
-        Invoke("LoadLevel", 1);
-    }
-
-    void LoadLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }*/
+   
 }
