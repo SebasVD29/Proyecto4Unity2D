@@ -34,8 +34,19 @@ public class PlayerRespawn : MonoBehaviour
 
     public void PlayerDameged()
     {
-        animator.Play("Idle");
+        animator.SetTrigger("Death");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-      
+    }
+
+    public void PlayerDeath()
+    {
+        // animator.Play("Death");
+        animator.SetTrigger("Death");
+        Invoke("LoadLevel", 1.5f);
+    }
+ 
+    void LoadLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

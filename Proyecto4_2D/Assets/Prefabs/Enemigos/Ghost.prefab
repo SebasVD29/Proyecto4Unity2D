@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8959055901063106896}
   - component: {fileID: 5803187358592479316}
   - component: {fileID: 3085205129277127907}
+  - component: {fileID: 5145226700824942902}
   - component: {fileID: 1537589310878739514}
   m_Layer: 0
   m_Name: Ghost
@@ -51,8 +52,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: Ghost
-  healthPoints: 8
-  speed: 3
+  healthPoints: 10
+  speed: 5
 --- !u!212 &5423363122261942596
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -94,7 +95,7 @@ SpriteRenderer:
   m_SortingLayerID: 279171157
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 397b9531e320e4cf0bf11b1d7f111160, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f62996eeedd3848f9861a4d9257f66a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -141,7 +142,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -165,6 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b5717f8d8b42ab4b80f35bb75b4d997, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyAnimator: {fileID: 1619023747254151937}
 --- !u!70 &3085205129277127907
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -197,9 +199,22 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.040634155, y: 0}
-  m_Size: {x: 0.6416397, y: 1.1578947}
+  m_Offset: {x: -0.032878876, y: -0.0026826859}
+  m_Size: {x: 0.45552063, y: 1.0237582}
   m_Direction: 0
+--- !u!114 &5145226700824942902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3470167765057159078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bfd53c4eea9b41348225d8a9220c5bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDamage: 0
 --- !u!61 &1537589310878739514
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -232,7 +247,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.034875393, y: -0.021461874}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -243,5 +258,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.81578946, y: 1.1578947}
+  m_Size: {x: 0.6494608, y: 1.0935092}
   m_EdgeRadius: 0

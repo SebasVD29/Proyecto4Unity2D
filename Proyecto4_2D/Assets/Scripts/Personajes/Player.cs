@@ -211,7 +211,6 @@ public class Player : MonoBehaviour
             animator.SetTrigger("Attack");
             
         }
-       
     }
 
     private IEnumerator StopDashing()
