@@ -533,9 +533,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadDeMovimiento: 0
-  runSpeed: 4
+  runSpeed: 5
   jumpSpeed: 6
-  doubleJumpSpeed: 6
+  doubleJumpSpeed: 10
   _dashingVelocity: 14
   _dashingTime: 0.5
   _active: 1

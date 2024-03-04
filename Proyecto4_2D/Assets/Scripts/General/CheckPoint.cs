@@ -14,6 +14,7 @@ public class CheckPoint : MonoBehaviour
             string level = SceneManager.GetActiveScene().name;
             float x = collision.transform.position.x;
             float y = collision.transform.position.y;
+
             collision.GetComponent<PlayerRespawn>().ReachedCheckkPoint(level, x, y);
             //APLICA LA ANIMACION DEL CHECK POINT
             checkPointFire.SetActive(true);

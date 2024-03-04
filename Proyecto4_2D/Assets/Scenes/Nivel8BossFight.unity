@@ -253,7 +253,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 6
 --- !u!114 &47334561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bfd53c4eea9b41348225d8a9220c5bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDamage: 20
+  playerDamage: 10
 --- !u!1 &84037596
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +456,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &165369461
 Transform:
   m_ObjectHideFlags: 0
@@ -696,7 +696,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.018464968, y: -0.28620708}
+  m_Offset: {x: -0.008507371, y: -0.5002945}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -707,7 +707,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.48298064, y: 1.2769749}
+  m_Size: {x: 0.74187684, y: 1.9242154}
   m_EdgeRadius: 0
 --- !u!114 &254934468
 MonoBehaviour:
@@ -1149,8 +1149,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.005387187, y: -0.5441154}
-  m_Size: {x: 0.52985454, y: 1.9519598}
+  m_Offset: {x: -0.014717072, y: -0.50990593}
+  m_Size: {x: 0.49875492, y: 1.8835409}
   m_Direction: 0
 --- !u!50 &392397369
 Rigidbody2D:
@@ -1249,7 +1249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bfd53c4eea9b41348225d8a9220c5bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDamage: 20
+  playerDamage: 10
 --- !u!4 &421829913 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 603279508882003952, guid: c46184cf7ea7e6c4eb084fec1d8d81b7, type: 3}
@@ -1928,7 +1928,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.041546345, y: -0.115406126}
+  m_Offset: {x: 0.034892797, y: -0.64769065}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1939,7 +1939,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7691879, y: 1.526252}
+  m_Size: {x: 1.1284795, y: 2.590821}
   m_EdgeRadius: 0
 --- !u!1 &1046235018
 GameObject:
@@ -2131,7 +2131,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1111953871}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -2503,7 +2503,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1270469100
 Transform:
   m_ObjectHideFlags: 0
@@ -3815,21 +3815,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4926953166233551844, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: m_TagString
-      value: Attack
+    - target: {fileID: 4707928089756324099, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
+      propertyPath: jumpSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5369371332503850560, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5369371332503850560, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5369371332503850560, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5817479114769522446, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5817479114769522446, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: m_TagString
-      value: Attack
-      objectReference: {fileID: 0}
     - target: {fileID: 6884482312253998075, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
       propertyPath: m_PreviewTimeScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290368966628514049, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.206
       objectReference: {fileID: 0}
     - target: {fileID: 7607192569663012109, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
       propertyPath: m_IsTrigger

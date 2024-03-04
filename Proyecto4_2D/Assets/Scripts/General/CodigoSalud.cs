@@ -37,10 +37,8 @@ public class CodigoSalud : MonoBehaviour
 
     public void RecibirDano(float dano)
     {
-
         Salud -= dano;
-      
-    
+
         if (Salud<=0)
         {
             Salud = 0;
@@ -53,7 +51,6 @@ public class CodigoSalud : MonoBehaviour
     public void ActualizarInterfaz()
     {
         BarraSalud.fillAmount = Salud / SaludMaxima;
-        //TextoSalud.text = "Salud: " + Salud.ToString("f0");
     }
 
 
