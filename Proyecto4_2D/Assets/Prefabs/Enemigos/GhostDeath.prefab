@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 6097361214840961920}
   - component: {fileID: 2505607038141705066}
   - component: {fileID: 8735688030873525626}
+  - component: {fileID: 2551292690078407475}
   m_Layer: 0
   m_Name: GhostDeath
   m_TagString: Enemy
@@ -127,7 +128,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -138,7 +139,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!70 &5043055614219157652
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -246,6 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b5717f8d8b42ab4b80f35bb75b4d997, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyAnimator: {fileID: 7833421245679475219}
 --- !u!114 &8735688030873525626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,3 +261,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDamage: 20
+--- !u!114 &2551292690078407475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6700868656421037585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65d91a3a501506a47b46d8b6ec0829b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToAttack: 0
+  startWaitTime: 3
+  isShooting: 0
+  isWalking: 1
+  player: {fileID: 0}
+  mirarIzquierda: 0
+  speed: 3
+  positions:
+  - {fileID: 0}
+  - {fileID: 0}
+  spawnAttack: {fileID: 0}
+  moveSpeedFire: 0
+  haveBlueBullet: 0
+  blueBullet: {fileID: 3816393398188285442, guid: 878ef6cccc5f28944954e9c02bd374a9, type: 3}
+  haveRedBullet: 0
+  redBullet: {fileID: 962783574290932614, guid: 652a30f960b963749ad497f2be17ff7f, type: 3}

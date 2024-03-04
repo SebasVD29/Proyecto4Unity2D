@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
     Animator animator;
     [SerializeField] GameObject attackWeapon;
     [SerializeField] GameObject groundGO;
-    [SerializeField] Collider2D playerCollider2D;
+    private Collider2D playerCollider2D;
 
 
     void Start()

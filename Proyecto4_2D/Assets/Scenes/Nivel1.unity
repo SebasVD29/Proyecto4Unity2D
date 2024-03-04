@@ -6202,6 +6202,10 @@ PrefabInstance:
       propertyPath: playerDamage
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 7913736405755159842, guid: f9d81ee2791ce91438b5e1b6e89ae66e, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1865111632}
     - target: {fileID: 8469787070521282052, guid: f9d81ee2791ce91438b5e1b6e89ae66e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.43

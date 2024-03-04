@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8926302907776391245}
   - component: {fileID: 4804748520380595808}
   - component: {fileID: 3813187662894804660}
+  - component: {fileID: 6950965378823041041}
   m_Layer: 0
   m_Name: SkeletonBlood
   m_TagString: Enemy
@@ -138,7 +139,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!70 &862035662731369315
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -259,3 +260,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b5717f8d8b42ab4b80f35bb75b4d997, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyAnimator: {fileID: 7318418773249595460}
+--- !u!114 &6950965378823041041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8703529141021016925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65d91a3a501506a47b46d8b6ec0829b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToAttack: 0
+  startWaitTime: 2
+  isShooting: 0
+  isWalking: 1
+  player: {fileID: 0}
+  mirarIzquierda: 1
+  speed: 1
+  positions:
+  - {fileID: 0}
+  - {fileID: 0}
+  spawnAttack: {fileID: 0}
+  moveSpeedFire: 0
+  haveBlueBullet: 0
+  blueBullet: {fileID: 0}
+  haveRedBullet: 0
+  redBullet: {fileID: 0}

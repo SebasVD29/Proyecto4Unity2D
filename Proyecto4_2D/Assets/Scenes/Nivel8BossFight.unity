@@ -167,6 +167,7 @@ GameObject:
   - component: {fileID: 47334560}
   - component: {fileID: 47334559}
   - component: {fileID: 47334563}
+  - component: {fileID: 47334564}
   m_Layer: 0
   m_Name: Muerte
   m_TagString: Boss
@@ -297,6 +298,19 @@ MonoBehaviour:
   bossName: Yelig-nar
   bossHealth: 10
   bossDamage: 10
+--- !u!114 &47334564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47334557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bfd53c4eea9b41348225d8a9220c5bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDamage: 20
 --- !u!1 &84037596
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,6 +1019,7 @@ GameObject:
   - component: {fileID: 392397369}
   - component: {fileID: 392397370}
   - component: {fileID: 392397372}
+  - component: {fileID: 392397373}
   m_Layer: 0
   m_Name: Angel
   m_TagString: Boss
@@ -1222,6 +1237,19 @@ MonoBehaviour:
   bossName: Remina
   bossHealth: 10
   bossDamage: 0
+--- !u!114 &392397373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392397363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bfd53c4eea9b41348225d8a9220c5bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDamage: 20
 --- !u!4 &421829913 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 603279508882003952, guid: c46184cf7ea7e6c4eb084fec1d8d81b7, type: 3}
