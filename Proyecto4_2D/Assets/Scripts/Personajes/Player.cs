@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
     Animator animator;
     [SerializeField] GameObject attackWeapon;
     [SerializeField] GameObject groundGO;
-    [SerializeField] Collider2D playerCollider2D;
+    private Collider2D playerCollider2D;
 
 
     void Start()
@@ -71,42 +71,43 @@ public class Player : MonoBehaviour
     void Update()
     {
 
-            //Prueba Dash
-            if (!_active)
-                return;
+        //Prueba Dash
+        if (!_active)
+            return;
 
-            var inputX = Input.GetAxisRaw("Horizontal");
-            var dashInput = Input.GetButtonDown("Dash");
+        var inputX = Input.GetAxisRaw("Horizontal");
+        var dashInput = Input.GetButtonDown("Dash");
 
-            if (dashInput && _canDash)
+        if (dashInput && _canDash)
+        {
+            //rb.gravityScale = 0;
+            _isDashing = true;
+            _canDash = true;
+            _trailRenderer.emitting = true;
+            _dashingDir = new Vector2(inputX, y: Input.GetAxisRaw("Vertical"));
+            if (_dashingDir == Vector2.zero)
             {
-                _isDashing = true;
-                _canDash = true;
-                _trailRenderer.emitting = true;
-                _dashingDir = new Vector2(inputX, y: Input.GetAxisRaw("Vertical"));
-                if (_dashingDir == Vector2.zero)
-                {
-                    _dashingDir = new Vector2(transform.localScale.x, y: 0);
-                }
-
-                StartCoroutine(StopDashing());
-
+                _dashingDir = new Vector2(transform.localScale.x, y: 0);
             }
 
+            StartCoroutine(StopDashing());
+        }
 
-            if (_isDashing)
-            {
-                animator.SetTrigger("Dash");
-                rb.velocity = _dashingDir.normalized * _dashingVelocity;
-            }
 
-            if (IsGrounded.isGrounded)
-            {
-                _canDash = true;
-            }
+        if (_isDashing)
+        {
+            //rb.gravityScale = 0;
+            animator.SetTrigger("Dash");
+            rb.velocity = _dashingDir.normalized * _dashingVelocity;
+        }
 
-            //
+        if (IsGrounded.isGrounded)
+        {
+            _canDash = true;
+        }
 
+        //
+        //rb.gravityScale = 1;
         if (Input.GetKey("d") || Input.GetKey("right"))
         {
             //El personaje se mueve hacia la derecha 
@@ -219,6 +220,7 @@ public class Player : MonoBehaviour
         _trailRenderer.emitting = false;
         _isDashing = false;
         _canDash = false;
+ 
     }
 
 

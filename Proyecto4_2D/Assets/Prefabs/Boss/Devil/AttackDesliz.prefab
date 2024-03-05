@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 522808479346999574}
   - component: {fileID: 719599742109518511}
   - component: {fileID: 1809215210220732837}
+  - component: {fileID: -6176312614275317033}
   m_Layer: 0
   m_Name: AttackDesliz
   m_TagString: Attack
@@ -197,6 +198,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-6176312614275317033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723320158597121897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bfd53c4eea9b41348225d8a9220c5bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDamage: 20
 --- !u!1 &1079958909901977751
 GameObject:
   m_ObjectHideFlags: 0

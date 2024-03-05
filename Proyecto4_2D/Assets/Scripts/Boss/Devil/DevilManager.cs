@@ -59,7 +59,6 @@ public class DevilManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //distanciaCalculadaDeAtaque = Vector2.Distance(transform.position, player.transform.position);
         moveDirection = (player.transform.position - transform.position).normalized * moveSpeed;
         MirarJugador();
     }
@@ -129,7 +128,7 @@ public class DevilManager : MonoBehaviour
         spell.transform.position = new Vector2(player.transform.position.x, -0.3f);
         yield return new WaitForSeconds(0.8f);
         spell.GetComponent<Animator>().SetTrigger("SpellAttack");
-        //yield return new WaitForSeconds(1f);
+      
 
     }
 
@@ -144,16 +143,10 @@ public class DevilManager : MonoBehaviour
         animatorDevil.SetTrigger("Walking");
         bossRB.velocity = new Vector2(moveDirection.x, bossRB.velocity.y);
 
-        // = NormalAttack.triggerNormalAttack;
-
         yield return new WaitForSeconds(timeToNormalAttack);
         animatorDevil.SetTrigger("NAttack");
 
-        //if (triggerNAttack)
-        //{
-        //    NormalAttack.triggerNormalAttack = false;
-        //}
-        //triggerNAttack = false;
+     
     }
     IEnumerator SpecialAttck()
     {

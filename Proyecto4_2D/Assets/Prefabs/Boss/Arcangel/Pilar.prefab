@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8549721360959298865}
   - component: {fileID: 1833320100687307954}
   - component: {fileID: 339138881467649612}
+  - component: {fileID: 4199972647592625685}
   m_Layer: 0
   m_Name: Pilar
   m_TagString: Attack
@@ -184,3 +185,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeLife: 1.5
+--- !u!114 &4199972647592625685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3267698006105233917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bfd53c4eea9b41348225d8a9220c5bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDamage: 20

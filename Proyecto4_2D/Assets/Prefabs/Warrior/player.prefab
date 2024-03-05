@@ -370,7 +370,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4926953166233551844}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -533,9 +533,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadDeMovimiento: 0
-  runSpeed: 4
+  runSpeed: 5
   jumpSpeed: 6
-  doubleJumpSpeed: 6
+  doubleJumpSpeed: 10
   _dashingVelocity: 14
   _dashingTime: 0.5
   _active: 1
@@ -544,7 +544,6 @@ MonoBehaviour:
   lowJumpMultiplier: 1
   attackWeapon: {fileID: 4926953166233551844}
   groundGO: {fileID: 8028931333334228754}
-  playerCollider2D: {fileID: 0}
 --- !u!114 &8875801317981615738
 MonoBehaviour:
   m_ObjectHideFlags: 0

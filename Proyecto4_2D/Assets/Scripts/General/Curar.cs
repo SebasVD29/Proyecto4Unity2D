@@ -12,7 +12,7 @@ public class Curar : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("Salud Player");
+            
             collision.GetComponent<CodigoSalud>().RecibirCura(CantidadCura);
 
             Destroy(gameObject);

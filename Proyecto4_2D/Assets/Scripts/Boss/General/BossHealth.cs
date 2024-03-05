@@ -17,7 +17,7 @@ public class BossHealth : MonoBehaviour
     {
         if (collision.CompareTag("PlayerAttack"))
         {
-            bossEnemy.bossHealth -= /*Player.Damage*/ 2f;
+            bossEnemy.bossHealth -= 2f;
             StartCoroutine(HitDeathAnimation());
 
         }
