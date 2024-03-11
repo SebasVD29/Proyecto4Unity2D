@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 6;
     public float dashForce = 6;
     public LayerMask groundLayer;
-    private float horizontal;
+    public float horizontal;
 
  
     [Header("Boleans")]
@@ -68,9 +68,14 @@ public class PlayerMovement : MonoBehaviour
     private void FLip()
     {
         isFacingRight = !isFacingRight;
-        Vector3 localScale = transform.localScale;
-        localScale.x *= -1f;
-        transform.localScale = localScale;
+        if (horizontal > 0f)
+        {
+            Debug.Log("Derecha");
+        } 
+        else 
+        {
+            Debug.Log("Izquierda");
+        }
     }
 
     void MovePlayerManager()
