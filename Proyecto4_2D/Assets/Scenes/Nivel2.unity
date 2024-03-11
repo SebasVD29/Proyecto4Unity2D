@@ -7673,7 +7673,7 @@ PrefabInstance:
     - target: {fileID: 2551292690078407475, guid: 2de7ff690f3e82545ba3f30f73215f61, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1555356260}
+      objectReference: {fileID: 0}
     - target: {fileID: 2551292690078407475, guid: 2de7ff690f3e82545ba3f30f73215f61, type: 3}
       propertyPath: positions.Array.size
       value: 2
@@ -7740,91 +7740,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3614076190805577755, guid: 2de7ff690f3e82545ba3f30f73215f61, type: 3}
   m_PrefabInstance: {fileID: 617142136}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &617270451
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4442490478309394622, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4657508286122191708, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4657508286122191708, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 4657508286122191708, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4657508286122191708, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4657508286122191708, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4657508286122191708, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4657508286122191708, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4657508286122191708, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4657508286122191708, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4657508286122191708, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4707928089756324099, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: jumpSpeed
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5817479114769522446, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: m_Name
-      value: player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6041233896071370783, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: m_Size.y
-      value: 0.050302505
-      objectReference: {fileID: 0}
-    - target: {fileID: 6041233896071370783, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: m_Offset.y
-      value: -2.0488944
-      objectReference: {fileID: 0}
-    - target: {fileID: 6884482312253998075, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: m_PreviewTimeScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7290368966628514049, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.579
-      objectReference: {fileID: 0}
-    - target: {fileID: 7290368966628514049, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.13
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
 --- !u!1 &635118580
 GameObject:
   m_ObjectHideFlags: 0
@@ -8045,7 +7960,7 @@ PrefabInstance:
     - target: {fileID: 7913736405755159842, guid: f9d81ee2791ce91438b5e1b6e89ae66e, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1555356260}
+      objectReference: {fileID: 0}
     - target: {fileID: 8469787070521282052, guid: f9d81ee2791ce91438b5e1b6e89ae66e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18.25
@@ -9699,7 +9614,7 @@ MonoBehaviour:
   limiteXDerecho: 25
   limiteYArrbia: 3
   limiteYAbajo: 0
-  Player: {fileID: 1555356260}
+  Player: {fileID: 0}
 --- !u!1 &810922837
 GameObject:
   m_ObjectHideFlags: 0
@@ -10099,7 +10014,7 @@ PrefabInstance:
     - target: {fileID: 2551292690078407475, guid: 2de7ff690f3e82545ba3f30f73215f61, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1555356260}
+      objectReference: {fileID: 0}
     - target: {fileID: 2551292690078407475, guid: 2de7ff690f3e82545ba3f30f73215f61, type: 3}
       propertyPath: positions.Array.data[0]
       value: 
@@ -17221,7 +17136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CambioNiveles: {fileID: 1355330193}
-  player: {fileID: 1555356260}
+  player: {fileID: 0}
 --- !u!1001 &1365852838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20129,11 +20044,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1555356260 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5817479114769522446, guid: 656b70bdc04001b44b099a76ebb101c0, type: 3}
-  m_PrefabInstance: {fileID: 617270451}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1556457846
 GameObject:
   m_ObjectHideFlags: 0
@@ -26148,7 +26058,7 @@ PrefabInstance:
     - target: {fileID: 7913736405755159842, guid: f9d81ee2791ce91438b5e1b6e89ae66e, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1555356260}
+      objectReference: {fileID: 0}
     - target: {fileID: 7913736405755159842, guid: f9d81ee2791ce91438b5e1b6e89ae66e, type: 3}
       propertyPath: timeTolAttack
       value: 5
@@ -27737,4 +27647,3 @@ SceneRoots:
   - {fileID: 1917105915}
   - {fileID: 476481391}
   - {fileID: 1042698389}
-  - {fileID: 617270451}

@@ -14,11 +14,15 @@ public class CambioNivel : MonoBehaviour
         {
             //gameObject.transform.GetChild(0).gameObject.SetActive(true);
             CambioNiveles.SetActive(true);
-            Invoke("ChangeLevel", 2);
+            Invoke("ChangeLevel", 0.5f);
         }
     }
-    void ChangeLevel()
+    void ChangeNextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    void ChangeLastLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
