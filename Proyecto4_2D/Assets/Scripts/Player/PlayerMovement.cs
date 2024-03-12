@@ -16,19 +16,22 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     private Rigidbody2D playerRB;
     private TrailRenderer trailRenderer;
+    private Animator playerAnimator;
 
     [Header("Movement")]
     public float runSpeed = 4;
     public float jumpForce = 6;
+    public float doubleJumpForce = 10;
     public float dashForce = 6;
     public LayerMask groundLayer;
     public float horizontal;
 
  
     [Header("Boleans")]
-    public bool haveDashing = false;
-    public bool haveDoubleJump = false;
+    public bool haveDashing;
+    public bool haveDoubleJump;
     private bool isFacingRight = true;
+    private bool doubleJump;
 
     [Header("Dash")]
     private bool canDash = true;
@@ -46,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
     {
         playerRB = GetComponent<Rigidbody2D>();
         trailRenderer = GetComponent<TrailRenderer>();
+        playerAnimator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -68,14 +72,9 @@ public class PlayerMovement : MonoBehaviour
     private void FLip()
     {
         isFacingRight = !isFacingRight;
-        if (horizontal > 0f)
-        {
-            Debug.Log("Derecha");
-        } 
-        else 
-        {
-            Debug.Log("Izquierda");
-        }
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1f;
+        transform.localScale = localScale;
     }
 
     void MovePlayerManager()
@@ -88,12 +87,18 @@ public class PlayerMovement : MonoBehaviour
 
         if (!isFacingRight && horizontal > 0f)
         {
-            FLip();
+            FLip();        
         }
-        else if (isFacingRight && horizontal > 0f)
+        else if (isFacingRight && horizontal < 0f)
         {
-            FLip();
+            FLip();    
         }
+
+        if (isGrounded() == false)
+        {
+            playerAnimator.SetTrigger("Fall");
+        }
+        
     }
 
     private IEnumerator DashPlayer()
@@ -116,12 +121,42 @@ public class PlayerMovement : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         horizontal = context.ReadValue<Vector2>().x;
+        if (horizontal > 0.5)
+        {
+            playerAnimator.SetFloat("Run", horizontal);
+
+        }
+        else if(horizontal < -0.5)
+        {
+            playerAnimator.SetFloat("Run", 1f);
+
+        } 
+        else if (horizontal == 0)
+        {
+            playerAnimator.SetFloat("Run", 0f);
+
+        }
+
     }
     public void Jump(InputAction.CallbackContext context)
     {
+        if (context.canceled && isGrounded())
+        {
+            
+            doubleJump = false;
+        }
         if (context.performed && isGrounded())
         {
-            playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
+            playerAnimator.SetTrigger("Jump");
+            playerRB.velocity = new Vector2(playerRB.velocity.x,  jumpForce);
+            
+        }
+        if (context.performed &&  (isGrounded() || doubleJump) && haveDoubleJump)
+        {
+            
+            playerAnimator.SetTrigger("Jump");
+            playerRB.velocity = new Vector2(playerRB.velocity.x,  doubleJumpForce);
+            doubleJump = !doubleJump;
         }
 
         if (context.canceled && playerRB.velocity.y > 0f)
@@ -132,7 +167,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Dash(InputAction.CallbackContext context)
     {
-        if (context.performed && canDash)
+        if (context.performed && canDash && haveDashing)
         {
             StartCoroutine(DashPlayer());
         }
