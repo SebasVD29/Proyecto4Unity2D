@@ -13,7 +13,7 @@ public class EnemyDamage : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             
-            collision.GetComponent<CodigoSalud>().RecibirDano(playerDamage);
+            collision.GetComponent<PlayerHealth>().TakeDamage(playerDamage);
             
         }
     }

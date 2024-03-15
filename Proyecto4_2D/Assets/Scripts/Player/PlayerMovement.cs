@@ -10,8 +10,6 @@ public class PlayerMovement : MonoBehaviour
     public float dashingTime = 0.2f;
     public float dashingCooldown = 1f;
 
-    public static PlayerMovement instance;
-
     [Header("Componentes")]
     public Transform groundCheck;
     private Rigidbody2D playerRB;
@@ -37,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     private bool canDash = true;
     private bool isDashing;
 
+    public static PlayerMovement instance;
     private void Awake()
     {
         if (instance == null)
