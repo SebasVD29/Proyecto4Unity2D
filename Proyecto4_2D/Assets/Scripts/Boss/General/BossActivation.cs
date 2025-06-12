@@ -23,7 +23,7 @@ public class BossActivation : MonoBehaviour
 
     IEnumerator FreezePlayer()
     {
-        float speed = 0; //Player.instance.runSpeed;
+         //Player.instance.runSpeed;
         //Player.instance.runSpeed = 0 ;
         boss.SetActive(true);
         yield return new WaitForSeconds(3f);

@@ -14,12 +14,12 @@ public class Habilidades : MonoBehaviour
         {
             if (Dash)
             {
-                collision.GetComponent<PlayerMovement>().haveDashing = true;
+ //               collision.GetComponent<PlayerMovement>().haveDashing = true;
                 Destroy(gameObject);
             }
             else if (DoubleJump)
             {
-                collision.GetComponent<PlayerMovement>().haveDoubleJump = true;
+   //             collision.GetComponent<PlayerMovement>().haveDoubleJump = true;
                 Destroy(gameObject);
             }
         }

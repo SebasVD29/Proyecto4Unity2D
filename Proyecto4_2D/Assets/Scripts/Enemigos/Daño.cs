@@ -11,7 +11,7 @@ public class Daño : MonoBehaviour
     {
         if (collision.transform.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<PlayerRespawn>().PlayerDeath();
+           // collision.gameObject.GetComponent<PlayerRespawn>().PlayerDeath();
         }
     }
     

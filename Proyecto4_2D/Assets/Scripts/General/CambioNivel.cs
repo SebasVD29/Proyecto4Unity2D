@@ -19,7 +19,7 @@ public class CambioNivel : MonoBehaviour
     }
     void ChangeNextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     void ChangeLastLevel()
     {

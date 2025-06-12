@@ -13,7 +13,7 @@ public class Curar : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
 
-            PlayerManager.instance.playerCuras += 1;
+            //PlayerManager.instance.playerCuras += 1;
 
             Destroy(gameObject);
 
