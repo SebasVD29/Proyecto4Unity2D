@@ -142,14 +142,14 @@ public class EnemyIA : MonoBehaviour
             if (moveDirection.x > 0)
             {
                 newBullet.GetComponent<SpriteRenderer>().flipX = false;
-                newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeedFire, 0);
+                newBullet.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(moveSpeedFire, 0);
                 
 
             }
             else
             {
                 newBullet.GetComponent<SpriteRenderer>().flipX = true;
-                newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeedFire, 0);
+                newBullet.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(-moveSpeedFire, 0);
 
             }
 
@@ -159,7 +159,7 @@ public class EnemyIA : MonoBehaviour
         {
             newBullet = Instantiate(redBullet, spawnAttack.position, Quaternion.identity);
             Vector2 moveDirection = (player.transform.position - spawnAttack.position).normalized * moveSpeedFire;
-            newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(moveDirection.x, moveDirection.y);
+            newBullet.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(moveDirection.x, moveDirection.y);
 
         }
 

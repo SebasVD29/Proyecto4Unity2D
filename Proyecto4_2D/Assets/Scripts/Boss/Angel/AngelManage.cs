@@ -198,7 +198,7 @@ public class AngelManage : MonoBehaviour
         GameObject Fire = Instantiate(fireBulletPrefab, spawnAttack.position, Quaternion.identity);
         //Fire.GetComponent<Bullet>().enabled = false;
         Vector2 moveDirection = (player.transform.position - spawnAttack.position).normalized * moveSpeedFire;
-        Fire.GetComponent<Rigidbody2D>().velocity = new Vector2(moveDirection.x, moveDirection.y);
+        Fire.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(moveDirection.x, moveDirection.y);
         yield return new WaitForSeconds(1f);
   
     }
@@ -297,7 +297,7 @@ public class AngelManage : MonoBehaviour
     }
     void CrearBala(float angulo, float velocidad)
     {
-        // Calcula las coordenadas x e y basándote en el ángulo y el radio
+        // Calcula las coordenadas x e y basï¿½ndote en el ï¿½ngulo y el radio
         float x = transform.position.x + Mathf.Cos(angulo * Mathf.Deg2Rad) * radioCirculo;
         float y = transform.position.y + Mathf.Sin(angulo * Mathf.Deg2Rad) * radioCirculo;
 
@@ -306,7 +306,7 @@ public class AngelManage : MonoBehaviour
 
         Vector2 bulDir = (bala.transform.position - transform.position).normalized;
         // Configura la velocidad de la bala
-        bala.GetComponent<Rigidbody2D>().velocity = bulDir * moveSpeedFire;
+        bala.GetComponent<Rigidbody2D>().linearVelocity = bulDir * moveSpeedFire;
 
     }
 

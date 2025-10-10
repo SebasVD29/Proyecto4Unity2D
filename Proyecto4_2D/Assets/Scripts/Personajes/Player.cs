@@ -98,7 +98,7 @@ public class Player : MonoBehaviour
         {
             //rb.gravityScale = 0;
             animator.SetTrigger("Dash");
-            rb.velocity = _dashingDir.normalized * _dashingVelocity;
+            rb.linearVelocity = _dashingDir.normalized * _dashingVelocity;
         }
 
         if (IsGrounded.isGrounded)
@@ -111,7 +111,7 @@ public class Player : MonoBehaviour
         if (Input.GetKey("d") || Input.GetKey("right"))
         {
             //El personaje se mueve hacia la derecha 
-            rb.velocity = new Vector2(runSpeed, rb.velocity.y);
+            rb.linearVelocity = new Vector2(runSpeed, rb.linearVelocity.y);
             //El personaje cambia la direccion hacia la derecha 
             sprite.flipX = false;
             sprite.flipX = false;
@@ -124,7 +124,7 @@ public class Player : MonoBehaviour
         else if (Input.GetKey("a") || Input.GetKey("left"))
         {
             //El personaje se mueve hacia la izquierda
-            rb.velocity = new Vector2(-runSpeed, rb.velocity.y);
+            rb.linearVelocity = new Vector2(-runSpeed, rb.linearVelocity.y);
             //El personaje cambia la direccion hacia la izquierda
             sprite.flipX = true;
             playerCollider2D.offset = new Vector2(0.24f, -0.1201479f);
@@ -136,7 +136,7 @@ public class Player : MonoBehaviour
         else
         {
             //El personaje no se mueve
-            rb.velocity = new Vector2(0, rb.velocity.y);
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
             //Se invoca el arbol de animacion
             animator.SetFloat("Run", 0);
 
@@ -148,7 +148,7 @@ public class Player : MonoBehaviour
              if (IsGrounded.isGrounded)
              {
                  canJump = true;
-                 rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpSpeed);
 
              }
              else
@@ -158,7 +158,7 @@ public class Player : MonoBehaviour
 
                      canJump = false;
                      animator.SetBool("Jump", true);
-                     rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+                     rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpSpeed);
                  }
              }
         
@@ -168,16 +168,16 @@ public class Player : MonoBehaviour
         //Upgraded Jump
         if (betterJump)
         {
-            if (rb.velocity.y < 0)
+            if (rb.linearVelocity.y < 0)
             {
                 //Se dirige hacia abajo 
-                rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier) * Time.deltaTime;
+                rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier) * Time.deltaTime;
 
             }
-            if (rb.velocity.y > 0 && !Input.GetKey("space"))
+            if (rb.linearVelocity.y > 0 && !Input.GetKey("space"))
             {
                 //El personaje da un salto corto 
-                rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier) * Time.deltaTime;
+                rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier) * Time.deltaTime;
             }
         }
 
@@ -194,7 +194,7 @@ public class Player : MonoBehaviour
             animator.SetBool("Jump", true);
         }
         //Para caer
-        if (rb.velocity.y < 0)
+        if (rb.linearVelocity.y < 0)
         {
             animator.SetBool("Fall", true);
         }

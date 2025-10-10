@@ -141,7 +141,7 @@ public class DevilManager : MonoBehaviour
         
         yield return new WaitForSeconds(0.3f);
         animatorDevil.SetTrigger("Walking");
-        bossRB.velocity = new Vector2(moveDirection.x, bossRB.velocity.y);
+        bossRB.linearVelocity = new Vector2(moveDirection.x, bossRB.linearVelocity.y);
 
         yield return new WaitForSeconds(timeToNormalAttack);
         animatorDevil.SetTrigger("NAttack");
@@ -163,14 +163,14 @@ public class DevilManager : MonoBehaviour
             GameObject special = Instantiate(SpecialAttack, specialAttackPosition.position, Quaternion.identity);
             special.transform.SetParent(specialAttackPosition);
             special.transform.Rotate(new Vector3(0, 0, 0));
-            special.GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeedAttack, 0);
+            special.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(-moveSpeedAttack, 0);
         }
         else
         {
             GameObject special = Instantiate(SpecialAttack, specialAttackPosition.position, Quaternion.identity);
             special.transform.SetParent(specialAttackPosition);
             special.transform.Rotate(new Vector3(0, 180, 0));
-            special.GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeedAttack, 0);
+            special.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(moveSpeedAttack, 0);
 
         }
     }
